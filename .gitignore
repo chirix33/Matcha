@@ -151,3 +151,5 @@ vite.config.ts.timestamp-*
 
 # OS specific
 .DS_Store
+
+.cursor/
