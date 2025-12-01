@@ -163,21 +163,25 @@ export default function Step5Review() {
         <div className="text-sm text-blue-800 space-y-2">
           <div>
             <p className="mb-2">
-              <strong>Third-Party AI Services:</strong> This application uses:
+              <strong>Third-Party AI Services:</strong> This application uses the following AI services:
             </p>
-            <ul className="list-disc list-inside mt-1 ml-2 mb-2">
-              <li>Hugging Face&apos;s Whisper AI service for speech-to-text transcription</li>
-              <li>OpenAI&apos;s API for extracting and normalizing skills from transcripts</li>
+            <ul className="list-disc list-inside mt-1 ml-2 mb-3 space-y-1">
+              <li><strong>Hugging Face Whisper AI:</strong> Converts your voice recordings to text. Audio is processed and immediately discarded.</li>
+              <li><strong>OpenAI API:</strong> Extracts and normalizes skills from your transcript text. Only transcript text is sent (no personal information). The transcript is processed and immediately discarded.</li>
             </ul>
+            <div className="bg-blue-100 border border-blue-300 rounded p-2 mb-2">
+              <p className="font-semibold text-blue-900 mb-1">OpenAI API Privacy Details:</p>
+              <ul className="list-disc list-inside ml-2 text-xs space-y-1">
+                <li>Only transcript text is sent to OpenAI (no name, email, phone, or other PII)</li>
+                <li>Transcripts are automatically checked and sanitized to remove potential personal information</li>
+                <li>OpenAI processes the text and immediately discards it after extraction</li>
+                <li>Only the extracted skills are stored in your profile</li>
+              </ul>
+            </div>
             <p>
-              Your audio is processed and immediately discarded. Transcripts are sent to OpenAI for skills extraction and then discarded. Only the extracted skills are stored in your profile.
+              <strong>Data Usage:</strong> Your profile data will be used to match you with relevant job opportunities. Personal identifiers (name, email, phone) are stored separately from anonymized profile features used for matching.
             </p>
           </div>
-          <p>
-            <strong>Data Usage:</strong> Your profile data will be used to match you with
-            relevant job opportunities. Personal identifiers (name, email, phone) are stored
-            separately from anonymized profile features used for matching.
-          </p>
           <p>
             <strong>English Only:</strong> The speech-to-text feature currently supports English
             speakers only.
@@ -196,8 +200,13 @@ export default function Step5Review() {
             required
           />
           <span className="text-sm text-gray-700">
-            I have read and agree to the privacy notice above. I understand that my audio data is
-            processed by Hugging Face&apos;s Whisper AI service and my transcripts are processed by OpenAI&apos;s API for skills extraction. All data is immediately discarded after processing.{" "}
+            I have read and agree to the privacy notice above. I understand that:
+            <ul className="list-disc list-inside ml-4 mt-1 space-y-1">
+              <li>My audio data is processed by Hugging Face&apos;s Whisper AI service and immediately discarded</li>
+              <li>My transcript text is sent to OpenAI&apos;s API for skills extraction (no personal information is included)</li>
+              <li>OpenAI processes and immediately discards the transcript after extraction</li>
+              <li>Only the extracted skills are stored in my profile</li>
+            </ul>
             <span className="text-red-500">*</span>
           </span>
         </label>

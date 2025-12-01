@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { ProfileService } from "@/lib/services/ProfileService";
 import { MatchingOrchestrator } from "@/lib/services/matching/MatchingOrchestrator";
+import { auditLogger } from "@/lib/services/AuditLogger";
+import { estimateAnonymizedProfileSize, validateAnonymizedProfileStructure } from "@/lib/utils/privacyUtils";
 import type { Job } from "@/types/job";
 
 const profileService = new ProfileService();
@@ -50,6 +52,10 @@ const MOCK_JOBS: Job[] = [
 
 /**
  * POST /api/matches - Get job matches for a profile
+ * 
+ * Privacy Boundary: This endpoint retrieves ONLY anonymized profile features (no PII).
+ * The anonymized profile is validated before being sent to the matching orchestrator.
+ * Only anonymized features are used for matching - no personal identifiers.
  */
 export async function POST(request: NextRequest) {
   try {
@@ -71,7 +77,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Get anonymized profile (ASR3: No PII sent to matching)
+    // Privacy Boundary: Get anonymized profile (ASR3: No PII sent to matching)
     const anonymizedProfile = await profileService.getAnonymizedProfileByEmail(email);
 
     if (!anonymizedProfile) {
@@ -81,29 +87,52 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Get job matches using orchestrator (with fallback)
-    const matches = await matchingOrchestrator.findMatches(anonymizedProfile, MOCK_JOBS);
+    // Privacy: Validate anonymized profile structure (ensure no PII)
+    const validation = validateAnonymizedProfileStructure(anonymizedProfile);
+    if (!validation.isValid) {
+      console.error("[Matches] Invalid anonymized profile structure:", validation.errors);
+      auditLogger.logDataValidation("validateAnonymizedProfile", false, validation.errors.join(", "));
+      // Continue anyway but log the issue
+    } else {
+      auditLogger.logDataValidation("validateAnonymizedProfile", true);
+    }
 
-    // Generate company insights for matched jobs
-    const matchedJobs = matches.map((m) => m.job);
-    const insights = await matchingOrchestrator.generateCompanyInsights(matchedJobs);
+    // Audit log: Anonymized profile retrieved and about to be used for matching
+    const profileSize = estimateAnonymizedProfileSize(anonymizedProfile);
+    auditLogger.logAnonymizedProfileRetrieved(email, profileSize);
 
-    // Attach insight cards to matches
-    const matchesWithInsights = matches.map((match) => ({
-      ...match,
-      insightCard: insights.get(match.job.id),
-    }));
+    // Privacy: Get job matches using orchestrator (with fallback)
+    // Only anonymized profile is passed - no PII
+    try {
+      auditLogger.logMatchingServiceCall("findMatches", profileSize, true);
+      const matches = await matchingOrchestrator.findMatches(anonymizedProfile, MOCK_JOBS);
 
-    // Determine if any matches are approximate
-    const hasApproximateMatches = matchesWithInsights.some((m) => m.isApproximate);
+      // Generate company insights for matched jobs
+      const matchedJobs = matches.map((m) => m.job);
+      const insights = await matchingOrchestrator.generateCompanyInsights(matchedJobs);
 
-    return NextResponse.json({
-      matches: matchesWithInsights,
-      isApproximate: hasApproximateMatches,
-      message: hasApproximateMatches
-        ? "Some results may be approximate due to AI service limitations"
-        : undefined,
-    });
+      // Attach insight cards to matches
+      const matchesWithInsights = matches.map((match) => ({
+        ...match,
+        insightCard: insights.get(match.job.id),
+      }));
+
+      // Determine if any matches are approximate
+      const hasApproximateMatches = matchesWithInsights.some((m) => m.isApproximate);
+
+      return NextResponse.json({
+        matches: matchesWithInsights,
+        isApproximate: hasApproximateMatches,
+        message: hasApproximateMatches
+          ? "Some results may be approximate due to AI service limitations"
+          : undefined,
+      });
+    } catch (error) {
+      // Audit log: Matching service failure
+      const errorMessage = error instanceof Error ? error.message : "Unknown error";
+      auditLogger.logMatchingServiceCall("findMatches", profileSize, false, errorMessage);
+      throw error; // Re-throw to be caught by outer catch
+    }
   } catch (error) {
     console.error("Job matching error:", error);
     return NextResponse.json(

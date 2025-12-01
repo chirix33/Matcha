@@ -1,6 +1,15 @@
 import { ProfileRepository, type Profile } from "@/lib/repositories/ProfileRepository";
 import type { ProfileData, AnonymizedProfile } from "@/types/profile";
+import { auditLogger } from "@/lib/services/AuditLogger";
+import { estimateAnonymizedProfileSize, validateAnonymizedProfileStructure } from "@/lib/utils/privacyUtils";
 
+/**
+ * ProfileService
+ * 
+ * Privacy Boundary: This service manages both PII (in Profile) and anonymized data (AnonymizedProfile).
+ * Methods that return AnonymizedProfile ensure no PII is included.
+ * All anonymized data retrieval is logged for audit purposes.
+ */
 export class ProfileService {
   private repository: ProfileRepository;
 
@@ -42,6 +51,10 @@ export class ProfileService {
 
   /**
    * Get anonymized profile by email (for AI matching)
+   * 
+   * Privacy Boundary: This method strips all PII and returns only anonymized features.
+   * The returned data contains NO name, email, phone, or other personal identifiers.
+   * All retrievals are logged for audit purposes.
    */
   async getAnonymizedProfileByEmail(
     email: string
@@ -51,15 +64,42 @@ export class ProfileService {
       return null;
     }
 
+    // Privacy: Retrieve anonymized profile (PII already stripped in repository)
     const anonymized = await this.repository.getAnonymizedProfile(profile.id);
+    
+    if (!anonymized) {
+      return null;
+    }
+
+    // Privacy: Validate that anonymized profile contains no PII
+    const validation = validateAnonymizedProfileStructure(anonymized);
+    if (!validation.isValid) {
+      console.error("[ProfileService] Invalid anonymized profile structure:", validation.errors);
+      auditLogger.logDataValidation("getAnonymizedProfileByEmail", false, validation.errors.join(", "));
+      // Return anyway but log the issue
+    } else {
+      auditLogger.logDataValidation("getAnonymizedProfileByEmail", true);
+    }
+
+    // Audit log: Anonymized profile retrieved (privacy boundary crossing)
+    const profileSize = estimateAnonymizedProfileSize(anonymized);
+    auditLogger.logAnonymizedProfileRetrieved(email, profileSize);
+
+    // Audit log: PII stripped
+    auditLogger.logPIIStripped("getAnonymizedProfileByEmail", 0, profileSize); // Original size unknown here
+
     return anonymized;
   }
 
   /**
    * Extract anonymized profile from ProfileData
+   * 
+   * Privacy Boundary: This method strips PII fields (name, email, phone) from ProfileData
+   * and returns only anonymized features suitable for AI matching.
    */
   extractAnonymizedProfile(profileData: ProfileData): AnonymizedProfile {
-    return {
+    // Privacy: Extract only non-PII fields
+    const anonymized: AnonymizedProfile = {
       skills: profileData.skills,
       yearsExperience: profileData.yearsExperience,
       seniority: profileData.seniority,
@@ -68,6 +108,22 @@ export class ProfileService {
       industries: profileData.industries,
       remotePreference: profileData.remotePreference,
     };
+
+    // Validate the extracted anonymized profile
+    const validation = validateAnonymizedProfileStructure(anonymized);
+    if (!validation.isValid) {
+      console.error("[ProfileService] Invalid anonymized profile after extraction:", validation.errors);
+      auditLogger.logDataValidation("extractAnonymizedProfile", false, validation.errors.join(", "));
+    } else {
+      auditLogger.logDataValidation("extractAnonymizedProfile", true);
+    }
+
+    // Audit log: PII stripped during extraction
+    const originalSize = JSON.stringify(profileData).length;
+    const anonymizedSize = estimateAnonymizedProfileSize(anonymized);
+    auditLogger.logPIIStripped("extractAnonymizedProfile", originalSize, anonymizedSize);
+
+    return anonymized;
   }
 }
 

@@ -193,10 +193,16 @@ export default function Step2Skills() {
 
         {/* Privacy Notice */}
         <div className="bg-blue-50 border border-blue-200 rounded-md p-3 text-sm text-blue-800">
-          <p className="font-semibold mb-1">Privacy Notice</p>
-          <p>
-            Your transcript is sent to OpenAI&apos;s API to extract and normalize skills. Only the transcript text is sent (no personal information). The transcript is processed and immediately discarded by OpenAI.
+          <p className="font-semibold mb-1">Privacy Notice: OpenAI API Usage</p>
+          <p className="mb-2">
+            <strong>Third-Party AI Service:</strong> When you click &quot;Add Skills&quot;, your transcript text is sent to <strong>OpenAI&apos;s API</strong> to extract and normalize skills.
           </p>
+          <ul className="list-disc list-inside ml-2 space-y-1">
+            <li><strong>What is sent:</strong> Only the transcript text you enter or record (no personal information like name, email, or phone)</li>
+            <li><strong>What happens:</strong> OpenAI processes the text to identify skills and immediately discards the transcript</li>
+            <li><strong>What is stored:</strong> Only the extracted skills are saved to your profile</li>
+            <li><strong>Privacy protection:</strong> The transcript is automatically checked and sanitized to remove any potential personal information before being sent</li>
+          </ul>
         </div>
       </div>
     </div>
