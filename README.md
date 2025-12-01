@@ -27,6 +27,7 @@ Matcha is an AI-assisted job matching assistant for students and early-career pr
 - Node.js 18+ and npm/yarn
 - Hugging Face account with API key ([Get one here](https://huggingface.co/settings/tokens))
 - OpenAI account with API key ([Get one here](https://platform.openai.com/api-keys))
+- Neon PostgreSQL database ([Get one here](https://neon.tech)) - Free tier available
 
 ### Installation
 
@@ -46,13 +47,16 @@ npm install
 cp .env.example .env.local
 ```
 
-4. Add your API keys to `.env.local`:
+4. Add your API keys and database URL to `.env.local`:
 ```
 HUGGING_FACE_API_KEY=your_hugging_face_api_key_here
 OPENAI_API_KEY=your_openai_api_key_here
+DATABASE_URL=postgresql://user:password@host/database?sslmode=require
 ```
 
-**Important**: These API keys should be server-side only (without `NEXT_PUBLIC_` prefix) for security.
+**Important**: 
+- These API keys should be server-side only (without `NEXT_PUBLIC_` prefix) for security.
+- Get your `DATABASE_URL` from your Neon project dashboard after creating a project.
 
 ### Running the Development Server
 

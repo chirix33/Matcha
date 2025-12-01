@@ -32,12 +32,11 @@ function ProfileFormContent() {
     setSubmitError(null);
 
     try {
-      // TODO: Replace with actual API call in Task 2
-      // For now, just log and show success
-      console.log("Submitting profile:", formData);
-
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      // Import API client dynamically to avoid SSR issues
+      const { createProfile } = await import("@/lib/services/profileApi");
+      
+      // Submit profile to backend
+      await createProfile(formData);
 
       setSubmitSuccess(true);
       
@@ -46,6 +45,7 @@ function ProfileFormContent() {
         localStorage.removeItem("matcha_profile_draft");
       }
     } catch (error) {
+      console.error("Profile submission error:", error);
       setSubmitError(
         error instanceof Error ? error.message : "Failed to submit profile. Please try again."
       );

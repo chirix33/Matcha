@@ -1,12 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
+import { OpenAIService } from "@/lib/services/ai/OpenAIService";
+import { AIError } from "@/lib/services/ai/AIService";
 
-const OPENAI_API_URL = "https://api.openai.com/v1/chat/completions";
-const TIMEOUT_MS = 10000; // 10 seconds as per ASR1
+// Simple parsing fallback function
+function parseSkillsFallback(transcript: string): string[] {
+  return transcript
+    .split(/[,\n]/)
+    .map((s) => s.trim())
+    .filter((s) => s.length > 0);
+}
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { transcript } = body;
+    const transcript = body.transcript;
 
     if (!transcript || typeof transcript !== "string") {
       return NextResponse.json(
@@ -15,101 +22,45 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const apiKey = process.env.OPENAI_API_KEY;
-    if (!apiKey) {
+    // Try OpenAI API first
+    try {
+      const openAIService = new OpenAIService();
+      const skills = await openAIService.extractSkills(transcript);
+
+      if (skills.length > 0) {
+        return NextResponse.json({ skills });
+      }
+    } catch (error) {
+      // Log error but continue to fallback
+      console.warn("[ExtractSkills] OpenAI extraction failed, using fallback:", error);
+    }
+
+    // Fallback to simple parsing
+    const fallbackSkills = parseSkillsFallback(transcript);
+    return NextResponse.json({
+      skills: fallbackSkills,
+      fallback: true, // Indicate fallback was used
+    });
+  } catch (error) {
+    console.error("Skills extraction error:", error);
+
+    // Try to extract transcript from error context if possible
+    // Note: Request body can only be read once, so we can't re-read it here
+    // If we reach here, it's likely a parsing error or service error
+    
+    // If it's an AIError, return appropriate status with empty skills
+    if (error instanceof AIError) {
+      const statusCode = error.code === "TIMEOUT" ? 408 : error.code === "SERVICE_UNAVAILABLE" ? 503 : 500;
       return NextResponse.json(
-        { error: "OpenAI API key not configured" },
-        { status: 500 }
+        {
+          error: error.message,
+          skills: [],
+          fallback: true,
+        },
+        { status: statusCode }
       );
     }
 
-    // Call OpenAI API with timeout
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), TIMEOUT_MS);
-
-    try {
-      console.log(`[ExtractSkills] Sending request to OpenAI API (transcript length: ${transcript.length})`);
-
-      const response = await fetch(OPENAI_API_URL, {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${apiKey}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          model: "gpt-4o-mini",
-          messages: [
-            {
-              role: "system",
-              content:
-                "Extract professional and technical skills from the user transcript. " +
-                "Return only a JSON object with a 'skills' array containing normalized skill names. " +
-                "Normalize skill names (e.g., 'JavaScript' not 'javascript' or 'JS'). " +
-                "Remove duplicates and filter out filler words or non-skill terms. " +
-                "Return format: { \"skills\": [\"skill1\", \"skill2\", ...] }",
-            },
-            {
-              role: "user",
-              content: transcript,
-            },
-          ],
-          response_format: { type: "json_object" },
-          temperature: 0.3,
-        }),
-        signal: controller.signal,
-      });
-
-      clearTimeout(timeoutId);
-
-      if (!response.ok) {
-        const errorText = await response.text();
-        console.error(`[ExtractSkills] OpenAI API error: ${response.status} - ${errorText}`);
-        throw new Error(`OpenAI API error: ${response.status}`);
-      }
-
-      const result = await response.json();
-      const content = result.choices?.[0]?.message?.content;
-
-      if (!content) {
-        throw new Error("No content in OpenAI response");
-      }
-
-      // Parse JSON response
-      let parsed;
-      try {
-        parsed = JSON.parse(content);
-      } catch (parseError) {
-        console.error("[ExtractSkills] Failed to parse JSON response:", parseError);
-        throw new Error("Invalid JSON response from OpenAI");
-      }
-
-      // Validate response structure
-      if (!parsed.skills || !Array.isArray(parsed.skills)) {
-        throw new Error("Invalid response format: missing skills array");
-      }
-
-      // Filter and normalize skills
-      const skills = parsed.skills
-        .filter((skill: unknown) => typeof skill === "string" && skill.trim().length > 0)
-        .map((skill: string) => skill.trim())
-        .filter((skill: string, index: number, arr: string[]) => arr.indexOf(skill) === index); // Remove duplicates
-
-      console.log(`[ExtractSkills] Success - extracted ${skills.length} skills`);
-
-      return NextResponse.json({
-        skills,
-      });
-    } catch (fetchError: unknown) {
-      clearTimeout(timeoutId);
-
-      if (fetchError instanceof Error && fetchError.name === "AbortError") {
-        console.error("[ExtractSkills] Request timeout after", TIMEOUT_MS, "ms");
-        throw new Error("Skills extraction request timed out");
-      }
-      throw fetchError;
-    }
-  } catch (error) {
-    console.error("Skills extraction error:", error);
     return NextResponse.json(
       {
         error: error instanceof Error ? error.message : "Skills extraction failed",
@@ -119,4 +70,3 @@ export async function POST(request: NextRequest) {
     );
   }
 }
-
