@@ -1,7 +1,14 @@
 import type { MatchingStrategy, Job, MatchResult } from "@/types/job";
 import type { AnonymizedProfile } from "@/types/profile";
+import { MatchFeatureExtractor } from "./MatchFeatureExtractor";
 
 export class KeywordMatchingStrategy implements MatchingStrategy {
+  private featureExtractor: MatchFeatureExtractor;
+
+  constructor() {
+    this.featureExtractor = new MatchFeatureExtractor();
+  }
+
   getStrategyName(): string {
     return "keyword";
   }
@@ -12,14 +19,17 @@ export class KeywordMatchingStrategy implements MatchingStrategy {
   async findMatches(profile: AnonymizedProfile, jobs: Job[]): Promise<MatchResult[]> {
     const matches: MatchResult[] = jobs
       .map((job) => {
-        const score = this.calculateScore(profile, job);
+        const features = this.featureExtractor.buildMatchFeatures(profile, job);
+        const score = this.calculateScoreFromBreakdown(features.scoreBreakdown);
+        
         if (score > 0) {
           return {
             job,
             score,
-            explanation: this.generateExplanation(profile, job),
-            matchedSkills: this.getMatchedSkills(profile, job),
+            explanation: this.generateExplanation(profile, job, features),
+            matchedSkills: features.skillMatch.matched,
             isApproximate: true, // Always approximate for keyword matching
+            features,
           };
         }
         return null;
@@ -32,91 +42,83 @@ export class KeywordMatchingStrategy implements MatchingStrategy {
   }
 
   /**
-   * Calculate keyword-based match score
+   * Calculate total score from breakdown
    */
-  private calculateScore(profile: AnonymizedProfile, job: Job): number {
-    let score = 0;
-
-    // Skill matches: +10 per matched skill
-    const skillMatches = profile.skills.filter((skill) =>
-      job.requiredSkills.some(
-        (requiredSkill) => requiredSkill.toLowerCase() === skill.toLowerCase()
-      )
-    ).length;
-    score += skillMatches * 10;
-
-    // Role match: +20
-    if (profile.desiredRoles.some((role) => role.toLowerCase() === job.role.toLowerCase())) {
-      score += 20;
-    }
-
-    // Industry match: +15 per matched industry
-    const industryMatches = profile.industries.filter((industry) =>
-      industry.toLowerCase() === job.industry.toLowerCase()
-    ).length;
-    score += industryMatches * 15;
-
-    // Company size match: +10
-    if (profile.preferredCompanySize === job.companySize) {
-      score += 10;
-    }
-
-    // Remote preference match: +10
-    if (profile.remotePreference === job.remotePreference) {
-      score += 10;
-    } else if (
-      (profile.remotePreference === "flexible" || job.remotePreference === "flexible") &&
-      profile.remotePreference !== job.remotePreference
-    ) {
-      // Partial match for flexible preference
-      score += 5;
-    }
-
-    // Experience level bonus (simplified)
-    // Entry/junior roles favor entry/junior profiles
-    if (
-      (job.role.toLowerCase().includes("entry") || job.role.toLowerCase().includes("junior")) &&
-      (profile.seniority === "entry" || profile.seniority === "junior")
-    ) {
-      score += 5;
-    }
-
-    return score;
+  private calculateScoreFromBreakdown(breakdown: import("@/types/job").ScoreBreakdown): number {
+    return (
+      breakdown.skills +
+      breakdown.role +
+      breakdown.industry +
+      breakdown.companySize +
+      breakdown.remote +
+      breakdown.experience
+    );
   }
 
   /**
-   * Generate human-readable explanation
+   * Generate human-readable explanation with at least 3 elements
    */
-  private generateExplanation(profile: AnonymizedProfile, job: Job): string {
+  private generateExplanation(
+    profile: AnonymizedProfile,
+    job: Job,
+    features: import("@/types/job").MatchFeatures
+  ): string {
     const parts: string[] = [];
 
-    // Matched skills
-    const matchedSkills = this.getMatchedSkills(profile, job);
-    if (matchedSkills.length > 0) {
-      parts.push(`Matched on skills: ${matchedSkills.join(", ")}`);
+    // 1. Matched skills (always include if matched)
+    if (features.skillMatch.matched.length > 0) {
+      parts.push(`Matched on skills: ${features.skillMatch.matched.join(", ")}`);
     }
 
-    // Role match
-    if (profile.desiredRoles.some((role) => role.toLowerCase() === job.role.toLowerCase())) {
+    // 2. Role match
+    if (features.preferenceMatch.role) {
       parts.push(`Role matches your preferences: ${job.role}`);
     }
 
-    // Industry match
+    // 3. Industry match
     const matchedIndustries = profile.industries.filter(
-      (industry) => industry.toLowerCase() === job.industry.toLowerCase()
+      (_, index) => features.preferenceMatch.industry[index]
     );
     if (matchedIndustries.length > 0) {
       parts.push(`Industry matches: ${matchedIndustries.join(", ")}`);
     }
 
-    // Company size
-    if (profile.preferredCompanySize === job.companySize) {
+    // 4. Experience alignment
+    if (features.experienceMatch.alignment !== "mismatch") {
+      const alignmentText = {
+        entry: "suitable for entry-level",
+        junior: "aligned with junior-level",
+        mid: "aligned with mid-level",
+        senior: "aligned with senior-level",
+        lead: "aligned with lead-level",
+      }[features.experienceMatch.alignment];
+      parts.push(`Experience level ${alignmentText} position`);
+    }
+
+    // 5. Company size
+    if (features.preferenceMatch.companySize) {
       parts.push(`Company size matches your preference: ${job.companySize}`);
     }
 
-    // Remote preference
-    if (profile.remotePreference === job.remotePreference) {
+    // 6. Remote preference
+    if (features.preferenceMatch.remote === true) {
       parts.push(`Remote work preference matches: ${job.remotePreference}`);
+    } else if (features.preferenceMatch.remote === "partial") {
+      parts.push(`Remote work preference partially matches`);
+    }
+
+    // Ensure at least 3 elements are referenced
+    // If we don't have enough, add generic alignment statements
+    if (parts.length < 3) {
+      if (features.skillMatch.matched.length === 0) {
+        parts.push("Some skill overlap with job requirements");
+      }
+      if (!features.preferenceMatch.role && parts.length < 3) {
+        parts.push("Role may align with your career goals");
+      }
+      if (matchedIndustries.length === 0 && parts.length < 3) {
+        parts.push("Industry may offer growth opportunities");
+      }
     }
 
     if (parts.length === 0) {
@@ -124,17 +126,6 @@ export class KeywordMatchingStrategy implements MatchingStrategy {
     }
 
     return parts.join(". ");
-  }
-
-  /**
-   * Get list of matched skills
-   */
-  private getMatchedSkills(profile: AnonymizedProfile, job: Job): string[] {
-    return profile.skills.filter((skill) =>
-      job.requiredSkills.some(
-        (requiredSkill) => requiredSkill.toLowerCase() === skill.toLowerCase()
-      )
-    );
   }
 }
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { ProfileFormProvider, useProfileFormContext } from "@/lib/contexts/ProfileFormContext";
 import StepIndicator from "./StepIndicator";
 import Step1BasicInfo from "./Step1BasicInfo";
@@ -10,6 +11,7 @@ import Step4Preferences from "./Step4Preferences";
 import Step5Review from "./Step5Review";
 
 function ProfileFormContent() {
+  const router = useRouter();
   const {
     currentStep,
     formData,
@@ -40,9 +42,12 @@ function ProfileFormContent() {
 
       setSubmitSuccess(true);
       
-      // Clear localStorage after successful submission
+      // Store email in localStorage for matches page access
       if (typeof window !== "undefined") {
         localStorage.removeItem("matcha_profile_draft");
+        if (formData.email) {
+          localStorage.setItem("matcha_profile_email", formData.email);
+        }
       }
     } catch (error) {
       console.error("Profile submission error:", error);
@@ -80,12 +85,29 @@ function ProfileFormContent() {
           <p className="text-green-800 mb-6">
             Your profile has been saved. You can now discover job matches.
           </p>
-          <button
-            onClick={resetForm}
-            className="px-6 py-3 bg-matcha-primary text-white rounded-md hover:bg-matcha-secondary"
-          >
-            Create Another Profile
-          </button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              onClick={() => {
+                if (formData.email) {
+                  router.push(`/matches?email=${encodeURIComponent(formData.email)}`);
+                }
+              }}
+              disabled={!formData.email}
+              className={`px-6 py-3 rounded-md font-medium ${
+                formData.email
+                  ? "bg-matcha-primary text-white hover:bg-matcha-secondary"
+                  : "bg-gray-300 text-gray-500 cursor-not-allowed"
+              }`}
+            >
+              View Job Matches
+            </button>
+            <button
+              onClick={resetForm}
+              className="px-6 py-3 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 font-medium"
+            >
+              Create Another Profile
+            </button>
+          </div>
         </div>
       </div>
     );

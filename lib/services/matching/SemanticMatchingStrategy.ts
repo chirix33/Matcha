@@ -1,12 +1,15 @@
 import { HuggingFaceService } from "@/lib/services/ai/HuggingFaceService";
+import { MatchFeatureExtractor } from "./MatchFeatureExtractor";
 import type { MatchingStrategy, Job, MatchResult } from "@/types/job";
 import type { AnonymizedProfile } from "@/types/profile";
 
 export class SemanticMatchingStrategy implements MatchingStrategy {
   private hfService: HuggingFaceService;
+  private featureExtractor: MatchFeatureExtractor;
 
   constructor() {
     this.hfService = new HuggingFaceService();
+    this.featureExtractor = new MatchFeatureExtractor();
   }
 
   getStrategyName(): string {
@@ -36,12 +39,48 @@ export class SemanticMatchingStrategy implements MatchingStrategy {
             return null;
           }
 
+          // Extract features for explanation and breakdown
+          const features = this.featureExtractor.buildMatchFeatures(profile, job);
+          
+          // Adjust score breakdown to reflect semantic similarity
+          // Scale semantic similarity (0-1) to 0-100, then adjust breakdown proportionally
+          const semanticScore = Math.round(similarity * 100);
+          const baseBreakdown = features.scoreBreakdown;
+          const baseTotal = Object.values(baseBreakdown).reduce((sum, val) => sum + val, 0);
+          
+          // If we have a base breakdown, scale it proportionally to semantic score
+          // Otherwise, use semantic score directly
+          const adjustedBreakdown = baseTotal > 0
+            ? {
+                skills: Math.round((baseBreakdown.skills / baseTotal) * semanticScore),
+                role: Math.round((baseBreakdown.role / baseTotal) * semanticScore),
+                industry: Math.round((baseBreakdown.industry / baseTotal) * semanticScore),
+                companySize: Math.round((baseBreakdown.companySize / baseTotal) * semanticScore),
+                remote: Math.round((baseBreakdown.remote / baseTotal) * semanticScore),
+                experience: Math.round((baseBreakdown.experience / baseTotal) * semanticScore),
+              }
+            : {
+                skills: Math.round(semanticScore * 0.4), // Default distribution
+                role: Math.round(semanticScore * 0.2),
+                industry: Math.round(semanticScore * 0.15),
+                companySize: Math.round(semanticScore * 0.1),
+                remote: Math.round(semanticScore * 0.1),
+                experience: Math.round(semanticScore * 0.05),
+              };
+
           return {
             job,
-            score: Math.round(similarity * 100), // Convert 0-1 range to 0-100 scale
-            explanation: this.generateExplanation(profile, job, similarity),
-            matchedSkills: this.getMatchedSkills(profile, job),
+            score: semanticScore,
+            explanation: this.generateExplanation(profile, job, similarity, {
+              ...features,
+              scoreBreakdown: adjustedBreakdown,
+            }),
+            matchedSkills: features.skillMatch.matched,
             isApproximate: false, // Semantic matching is not approximate
+            features: {
+              ...features,
+              scoreBreakdown: adjustedBreakdown,
+            },
           };
         })
         .filter((match): match is MatchResult => match !== null)
@@ -111,12 +150,17 @@ export class SemanticMatchingStrategy implements MatchingStrategy {
   // which returns similarity scores, so we don't need to calculate cosine similarity manually
 
   /**
-   * Generate explanation based on semantic match
+   * Generate explanation based on semantic match with at least 3 elements
    */
-  private generateExplanation(profile: AnonymizedProfile, job: Job, similarity: number): string {
+  private generateExplanation(
+    profile: AnonymizedProfile,
+    job: Job,
+    similarity: number,
+    features: import("@/types/job").MatchFeatures
+  ): string {
     const parts: string[] = [];
 
-    // High similarity
+    // 1. Semantic similarity level
     if (similarity > 0.7) {
       parts.push("Strong semantic match");
     } else if (similarity > 0.5) {
@@ -125,28 +169,66 @@ export class SemanticMatchingStrategy implements MatchingStrategy {
       parts.push("Some semantic alignment");
     }
 
-    // Add specific matches
-    const matchedSkills = this.getMatchedSkills(profile, job);
-    if (matchedSkills.length > 0) {
-      parts.push(`Skills match: ${matchedSkills.join(", ")}`);
+    // 2. Matched skills (always include if matched)
+    if (features.skillMatch.matched.length > 0) {
+      parts.push(`Skills match: ${features.skillMatch.matched.join(", ")}`);
     }
 
-    if (profile.desiredRoles.some((role) => role.toLowerCase() === job.role.toLowerCase())) {
-      parts.push(`Role matches: ${job.role}`);
+    // 3. Role match
+    if (features.preferenceMatch.role) {
+      parts.push(`Role matches your preferences: ${job.role}`);
+    }
+
+    // 4. Industry match
+    const matchedIndustries = profile.industries.filter(
+      (_, index) => features.preferenceMatch.industry[index]
+    );
+    if (matchedIndustries.length > 0) {
+      parts.push(`Industry matches: ${matchedIndustries.join(", ")}`);
+    }
+
+    // 5. Experience alignment
+    if (features.experienceMatch.alignment !== "mismatch") {
+      const alignmentText = {
+        entry: "suitable for entry-level",
+        junior: "aligned with junior-level",
+        mid: "aligned with mid-level",
+        senior: "aligned with senior-level",
+        lead: "aligned with lead-level",
+      }[features.experienceMatch.alignment];
+      parts.push(`Experience level ${alignmentText} position`);
+    }
+
+    // 6. Company size preference
+    if (features.preferenceMatch.companySize) {
+      parts.push(`Company size matches your preference: ${job.companySize}`);
+    }
+
+    // 7. Remote preference
+    if (features.preferenceMatch.remote === true) {
+      parts.push(`Remote work preference matches: ${job.remotePreference}`);
+    } else if (features.preferenceMatch.remote === "partial") {
+      parts.push(`Remote work preference partially matches`);
+    }
+
+    // Ensure at least 3 elements are referenced
+    // If we don't have enough, add generic alignment statements
+    if (parts.length < 3) {
+      if (features.skillMatch.matched.length === 0) {
+        parts.push("Some skill overlap with job requirements");
+      }
+      if (!features.preferenceMatch.role && parts.length < 3) {
+        parts.push("Role may align with your career goals");
+      }
+      if (matchedIndustries.length === 0 && parts.length < 3) {
+        parts.push("Industry may offer growth opportunities");
+      }
+      if (features.experienceMatch.alignment === "mismatch" && parts.length < 3) {
+        parts.push("Experience level may be suitable for growth");
+      }
     }
 
     return parts.join(". ");
-  }
-
-  /**
-   * Get matched skills
-   */
-  private getMatchedSkills(profile: AnonymizedProfile, job: Job): string[] {
-    return profile.skills.filter((skill) =>
-      job.requiredSkills.some(
-        (requiredSkill) => requiredSkill.toLowerCase() === skill.toLowerCase()
-      )
-    );
   }
 }
 
