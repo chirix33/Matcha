@@ -1,0 +1,17 @@
+{
+	"mcpServers": {
+		"next-devtools": {
+		"command": "npx",
+		"args": ["-y", "next-devtools-mcp@latest"]
+		},
+		"task-master-ai": {
+			"command": "npx",
+			"args": ["-y", "task-master-ai"],
+			"env": {
+				"PERPLEXITY_API_KEY": "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",
+				"OPENAI_API_KEY": "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",
+				"GOOGLE_API_KEY": "AIzaSyD52jtABV69NKVU-UG4kyRFz9q2LwVIOy0"
+			}
+		}
+	}
+}
