@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import { startRecording, stopRecording, transcribeAudio } from "@/lib/services/speechToText";
+import { asrFailureTracker, ASRErrorType, ASRFailureTracker } from "@/lib/services/ASRFailureTracker";
 
 interface SpeechInputProps {
   value: string;
@@ -26,9 +27,32 @@ export default function SpeechInput({
   const [isTranscribing, setIsTranscribing] = useState(false);
   const [transcriptionError, setTranscriptionError] = useState<string | null>(null);
   const [showFallback, setShowFallback] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
+  const [hasWarning, setHasWarning] = useState(false);
   const recorderRef = useRef<MediaRecorder | null>(null);
 
+  // Check failure tracker status on mount and periodically
+  useEffect(() => {
+    const checkStatus = () => {
+      const stats = asrFailureTracker.getStats();
+      setIsDisabled(stats.shouldDisable);
+      setHasWarning(stats.hasWarning);
+    };
+
+    checkStatus();
+    const interval = setInterval(checkStatus, 5000); // Check every 5 seconds
+    return () => clearInterval(interval);
+  }, []);
+
   const handleStartRecording = useCallback(async () => {
+    // Check if speech-to-text should be disabled
+    if (asrFailureTracker.shouldDisableSpeechToText()) {
+      setTranscriptionError("Speech-to-text is temporarily disabled due to repeated failures. Please use text input.");
+      setShowFallback(true);
+      setIsDisabled(true);
+      return;
+    }
+
     try {
       setTranscriptionError(null);
       const recorder = await startRecording();
@@ -53,16 +77,67 @@ export default function SpeechInput({
             model: "openai/whisper-small",
           });
 
-          if (result.error) {
-            throw new Error(result.error);
-          }
+          // Track the attempt
+          if (result.error || result.isPoorQuality || !result.transcript) {
+            // Determine error type
+            let errorType = result.errorType;
+            if (!errorType) {
+              if (result.isPoorQuality) {
+                errorType = ASRErrorType.POOR_QUALITY;
+              } else if (!result.transcript) {
+                errorType = ASRErrorType.EMPTY_RESULT;
+              } else {
+                errorType = ASRErrorType.UNKNOWN;
+              }
+            }
 
-          // Append transcript to existing value or replace if empty
-          const newValue = value ? `${value} ${result.transcript}` : result.transcript;
-          onChange(newValue);
-          setShowFallback(false);
+            // Track failure
+            asrFailureTracker.trackAttempt(
+              false,
+              errorType,
+              result.transcript?.length || 0
+            );
+
+            // Update UI state
+            const stats = asrFailureTracker.getStats();
+            setIsDisabled(stats.shouldDisable);
+            setHasWarning(stats.hasWarning);
+
+            // Show appropriate error message
+            const errorMessage = getErrorMessage(errorType, result.isPoorQuality);
+            setTranscriptionError(errorMessage);
+            setShowFallback(true);
+          } else {
+            // Track success
+            asrFailureTracker.trackAttempt(
+              true,
+              undefined,
+              result.transcript.length
+            );
+
+            // Append transcript to existing value or replace if empty
+            const newValue = value ? `${value} ${result.transcript}` : result.transcript;
+            onChange(newValue);
+            setShowFallback(false);
+
+            // Update UI state
+            const stats = asrFailureTracker.getStats();
+            setIsDisabled(stats.shouldDisable);
+            setHasWarning(stats.hasWarning);
+          }
         } catch (err) {
           console.error("Transcription error:", err);
+          
+          // Categorize and track error
+          const errorForCategorization = err instanceof Error ? err : err ? String(err) : undefined;
+          const errorType = ASRFailureTracker.categorizeError(errorForCategorization);
+          asrFailureTracker.trackAttempt(false, errorType);
+
+          // Update UI state
+          const stats = asrFailureTracker.getStats();
+          setIsDisabled(stats.shouldDisable);
+          setHasWarning(stats.hasWarning);
+
           setTranscriptionError(
             err instanceof Error ? err.message : "Transcription failed. Please use text input."
           );
@@ -75,11 +150,54 @@ export default function SpeechInput({
       recorder.start();
     } catch (err) {
       console.error("Recording error:", err);
+      
+      // Categorize microphone error
+      const errorType = ASRErrorType.MICROPHONE_DENIED;
+      asrFailureTracker.trackAttempt(false, errorType);
+
+      // Update UI state
+      const stats = asrFailureTracker.getStats();
+      setIsDisabled(stats.shouldDisable);
+      setHasWarning(stats.hasWarning);
+
       setTranscriptionError("Microphone access denied. Please use text input.");
       setShowFallback(true);
       setIsRecording(false);
     }
   }, [value, onChange]);
+
+  // Helper function to get user-friendly error messages
+  const getErrorMessage = (errorType?: ASRErrorType, isPoorQuality?: boolean): string => {
+    if (isPoorQuality) {
+      return "Transcription quality is poor. Please try speaking more clearly or use text input.";
+    }
+
+    switch (errorType) {
+      case ASRErrorType.TIMEOUT:
+        return "Transcription timed out. Please try again or use text input.";
+      case ASRErrorType.SERVICE_UNAVAILABLE:
+        return "Speech-to-text service is temporarily unavailable. Please use text input.";
+      case ASRErrorType.MICROPHONE_DENIED:
+        return "Microphone access denied. Please enable microphone permissions or use text input.";
+      case ASRErrorType.NETWORK_ERROR:
+        return "Network error. Please check your connection and try again, or use text input.";
+      case ASRErrorType.EMPTY_RESULT:
+        return "No transcription received. Please try again or use text input.";
+      case ASRErrorType.POOR_QUALITY:
+        return "Transcription quality is poor. Please try speaking more clearly or use text input.";
+      default:
+        return "Transcription failed. Please use text input.";
+    }
+  };
+
+  // Handle manual re-enable
+  const handleReEnable = useCallback(() => {
+    asrFailureTracker.resetFailureTracking();
+    setIsDisabled(false);
+    setHasWarning(false);
+    setTranscriptionError(null);
+    setShowFallback(false);
+  }, []);
 
   const handleStopRecording = useCallback(() => {
     if (recorderRef.current && isRecording) {
@@ -114,6 +232,17 @@ export default function SpeechInput({
         </p>
       </div>
 
+      {/* Warning Banner (High failure rate but not disabled) */}
+      {hasWarning && !isDisabled && (
+        <div className="bg-yellow-50 border border-yellow-300 rounded-md p-3 text-sm text-yellow-800">
+          <p className="font-semibold mb-1">⚠️ High Error Rate Detected</p>
+          <p>
+            Speech-to-text is experiencing issues. If problems continue, it will be automatically disabled.
+            You can continue using text input at any time.
+          </p>
+        </div>
+      )}
+
       {/* Speech Input Controls */}
       <div className="flex gap-2 items-start">
         <div className="flex-1">
@@ -142,10 +271,12 @@ export default function SpeechInput({
         <button
           type="button"
           onClick={handleToggleRecording}
-          disabled={isTranscribing}
+          disabled={isTranscribing || isDisabled}
           className={`px-4 py-2 rounded-md font-medium transition-colors ${
             isRecording
               ? "bg-red-500 hover:bg-red-600 text-white"
+              : isDisabled
+              ? "bg-gray-400 text-gray-600 cursor-not-allowed"
               : "bg-matcha-primary hover:bg-matcha-secondary text-white"
           } disabled:opacity-50 disabled:cursor-not-allowed`}
           aria-label={isRecording ? "Stop recording" : "Start recording"}
@@ -160,6 +291,10 @@ export default function SpeechInput({
               <span className="animate-pulse">🔴</span>
               Stop
             </span>
+          ) : isDisabled ? (
+            <span className="flex items-center gap-2">
+              🚫 Disabled
+            </span>
           ) : (
             <span className="flex items-center gap-2">
               🎤 Record
@@ -169,12 +304,32 @@ export default function SpeechInput({
       </div>
 
       {/* Fallback Text Input Notice */}
-      {showFallback && (
+      {showFallback && !isDisabled && (
         <div className="bg-yellow-50 border border-yellow-200 rounded-md p-2 text-sm text-yellow-800">
           <p>
-            <strong>Fallback Mode:</strong> Speech-to-text is unavailable. Please use the text
+            <strong>Fallback Mode:</strong> Speech-to-text encountered an error. Please use the text
             input above.
           </p>
+        </div>
+      )}
+
+      {/* Disabled State Notice */}
+      {isDisabled && (
+        <div className="bg-red-50 border border-red-200 rounded-md p-3 text-sm text-red-800">
+          <p className="font-semibold mb-2">
+            🚫 Speech-to-Text Temporarily Disabled
+          </p>
+          <p className="mb-2">
+            Speech-to-text has been automatically disabled due to repeated failures. 
+            Please use the text input above to continue.
+          </p>
+          <button
+            type="button"
+            onClick={handleReEnable}
+            className="px-3 py-1 bg-red-600 text-white rounded-md hover:bg-red-700 text-xs font-medium"
+          >
+            Re-enable Speech-to-Text
+          </button>
         </div>
       )}
     </div>

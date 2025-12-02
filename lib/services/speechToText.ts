@@ -1,3 +1,5 @@
+import { ASRErrorType, ASRFailureTracker } from "./ASRFailureTracker";
+
 export interface TranscriptionOptions {
   language?: string;
   model?: string;
@@ -7,6 +9,8 @@ export interface TranscriptionResult {
   transcript: string;
   confidence?: number;
   error?: string;
+  errorType?: ASRErrorType; // Error category for tracking
+  isPoorQuality?: boolean; // Detected misrecognition (empty or very short transcript)
 }
 
 /**
@@ -54,14 +58,31 @@ export async function transcribeAudio(
     }
 
     const data = await response.json();
+    const transcript = data.transcript || "";
+    
+    // Detect misrecognitions (poor quality transcriptions)
+    const minTranscriptLength = 10; // Minimum characters for quality check
+    const isPoorQuality = transcript.length > 0 && transcript.length < minTranscriptLength;
+    
+    // Get error type from response or categorize the error
+    const errorType = data.errorType || (data.error ? ASRFailureTracker.categorizeError(data.error) : undefined);
+    
     return {
-      transcript: data.transcript || "",
+      transcript,
       confidence: data.confidence,
+      errorType,
+      isPoorQuality,
     };
   } catch (error) {
+    // Categorize the error
+    const errorForCategorization = error instanceof Error ? error : error ? String(error) : undefined;
+    const errorType = ASRFailureTracker.categorizeError(errorForCategorization);
+    
     return {
       transcript: "",
       error: error instanceof Error ? error.message : "Transcription failed",
+      errorType,
+      isPoorQuality: false, // No transcript to check quality
     };
   }
 }
