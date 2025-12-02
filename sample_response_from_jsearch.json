@@ -1,0 +1,1016 @@
+{
+    "status": "OK",
+    "request_id": "8d5142c5-d5cc-44a8-9467-47f65d0f4a12",
+    "parameters": {
+      "query": "developer jobs in chicago",
+      "page": 1,
+      "num_pages": 1,
+      "date_posted": "all",
+      "country": "us",
+      "language": "en"
+    },
+    "data": [
+      {
+        "job_id": "N84AxJxVCs_yT1EyAAAAAA==",
+        "job_title": "Python Developer - Asset & Wealth Management",
+        "employer_name": "RIIM",
+        "employer_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcResuqyOss-kZuXIxZWCNBpFCy9WilJgWc9BF1e&s=0",
+        "employer_website": null,
+        "job_publisher": "LinkedIn",
+        "job_employment_type": "Contractor",
+        "job_employment_types": [
+          "CONTRACTOR"
+        ],
+        "job_apply_link": "https://www.linkedin.com/jobs/view/python-developer-asset-wealth-management-at-riim-4340343032?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "job_apply_is_direct": false,
+        "apply_options": [
+          {
+            "publisher": "LinkedIn",
+            "apply_link": "https://www.linkedin.com/jobs/view/python-developer-asset-wealth-management-at-riim-4340343032?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          }
+        ],
+        "job_description": "• 10+ years of professional software engineering with Python in production.\n• Deep expertise with at least one Python web framework (FastAPI, Django, or Flask) and modern async programming.\n• Strong CS fundamentals: algorithms, data structures, and concurrency\n• Proven experience designing distributed systems and event-driven architectures.\n• Solid SQL/ORM experience (SQLAlchemy/Django ORM) and schema design.\n• Mastery of testing (unit/integration/contract), CI/CD (GitHub /Azure DevOps), and release strategies.\n• Hands-on with cloud (Azure), containers, Kubernetes, and infrastructure automation.\n• Excellent communication; ability to lead cross-functional initiatives.",
+        "job_is_remote": false,
+        "job_posted_at": "12 hours ago",
+        "job_posted_at_timestamp": 1764583200,
+        "job_posted_at_datetime_utc": "2025-12-01T10:00:00.000Z",
+        "job_location": "Chicago, IL",
+        "job_city": "Chicago",
+        "job_state": "Illinois",
+        "job_country": "US",
+        "job_latitude": 41.88325,
+        "job_longitude": -87.6323879,
+        "job_benefits": null,
+        "job_google_link": "https://www.google.com/search?q=jobs&gl=us&hl=en&udm=8#vhid=vt%3D20/docid%3DN84AxJxVCs_yT1EyAAAAAA%3D%3D&vssid=jobs-detail-viewer",
+        "job_salary": null,
+        "job_min_salary": null,
+        "job_max_salary": null,
+        "job_salary_period": null,
+        "job_highlights": {
+          "Qualifications": [
+            "10+ years of professional software engineering with Python in production",
+            "Deep expertise with at least one Python web framework (FastAPI, Django, or Flask) and modern async programming",
+            "Strong CS fundamentals: algorithms, data structures, and concurrency",
+            "Proven experience designing distributed systems and event-driven architectures",
+            "Solid SQL/ORM experience (SQLAlchemy/Django ORM) and schema design",
+            "Mastery of testing (unit/integration/contract), CI/CD (GitHub /Azure DevOps), and release strategies",
+            "Hands-on with cloud (Azure), containers, Kubernetes, and infrastructure automation",
+            "Excellent communication; ability to lead cross-functional initiatives"
+          ]
+        },
+        "job_onet_soc": "13205200",
+        "job_onet_job_zone": "4"
+      },
+      {
+        "job_id": "Y4Ihu7eDiwe7smUxAAAAAA==",
+        "job_title": "Senior Developer - .Net, Angular or React, Information Technology",
+        "employer_name": "United Airlines",
+        "employer_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6DMswunk7F25_BeXSf2w8JVHG65s4lc7v5wfG&s=0",
+        "employer_website": "https://www.united.com",
+        "job_publisher": "United Airlines Jobs",
+        "job_employment_type": "Full-time",
+        "job_employment_types": [
+          "FULLTIME"
+        ],
+        "job_apply_link": "https://careers.united.com/us/en/job/WHQ00025778/Senior-Developer-Net-Angular-or-React-Information-Technology?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "job_apply_is_direct": false,
+        "apply_options": [
+          {
+            "publisher": "United Airlines Jobs",
+            "apply_link": "https://careers.united.com/us/en/job/WHQ00025778/Senior-Developer-Net-Angular-or-React-Information-Technology?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "Bank Of America Careers",
+            "apply_link": "https://careers.bankofamerica.com/en-us/job-detail/25023769/senior-red-team-developer-adaptive-threat-simulation-multiple-locations-esomprank-gzsowhaqbv-18?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "Indeed",
+            "apply_link": "https://www.indeed.com/viewjob?jk=d4b274cda0c5483c&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "Workday",
+            "apply_link": "https://ghr.wd1.myworkdayjobs.com/en-US/Lateral-US/job/Senior-Red-Team-Developer---Adaptive-Threat-Simulation_25023769?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "ZipRecruiter",
+            "apply_link": "https://www.ziprecruiter.com/c/Bank-of-America/Job/Senior-Red-Team-Developer-Adaptive-Threat-Simulation/-in-Chicago,IL?jid=0a926d3fdaf89d68&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "National Black MBA Association (NBMBAA)",
+            "apply_link": "https://jobs.nbmbaa.org/job/senior-red-team-developer-adaptive-threat-simulation-chicago-973601?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "JSfirm.com",
+            "apply_link": "https://www.jsfirm.com/Management/Senior+Developer+-+Net,+Angular+or+React,+Information+Technology/Chicago-Illinois/jobID_1769861?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "Dice",
+            "apply_link": "https://www.dice.com/job-detail/6e53e57a-f96c-4459-9778-84ead1ad8d52?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          }
+        ],
+        "job_description": "Achieving our goals starts with supporting yours. Grow your career, access top-tier health and wellness benefits, build lasting connections with your team and our customers, and travel the world using our extensive route network.\n\nCome join us to create what’s next. Let’s define tomorrow, together.\n\nDescription\n\nThe Senior Developer, IT will be responsible for the development of Loyalty critical applications. This role will need to have full stack expertise on technical development in Loyalty technologies including front end customer applications, API development and integration, database & AWS cloud-based services.\n•  Lead development, execution, and delivery of artifacts/code for Loyalty applications\n•  Collaborate with technology leads/developers, business SMEs, UX designers, and technology stakeholders to define technical deliveries\n•  Drive integration of Loyalty services and UIs with back-end systems, APIs and analytics platforms\n•  Champion Agile/Scrum methodologies, participate in sprint planning, stand-ups, and retrospectives\n•  Lead integrations between internal platforms, external systems, and cloud services\n•  Collaborate with development, infrastructure, and product teams to gather integration requirements and translate them into scalable technical solutions\n•  Lead unit and integration testing and assist QA teams with end-to-end testing\n•  Stay current with industry best practices and emerging technologies in development and integration\n•  Highlight and document risks, issues, blockers and dependencies; discuss with team project manager on regular basis\n•  Coordinate with Cloud infrastructure teams to ensure scalable, secure, and high-performance deployments\n•  Oversee vendor relationships and third-party integrations when applicable\n•  Support and guide the team in removing blockers, maintaining momentum, and ensuring quality\n•  Proven experience delivering full stack applications.\n•  Solid technical understanding of cloud platforms (AWS/Azure/GCP), APIs, CI/CD, web technologies, and DevOps practices\n•  Experience with Agile/Scrum or SAFe frameworks and tools (e.g., Jira, Confluence, Azure DevOps)\n•  Excellent communication, leadership, and documentation abilities\n•  Knowledge of APIs, JSON, XML, and OAuth\n•  Experience with language: Node.js, React and/or Angular, .NET, Python\n•  Familiarity with CI/CD pipelines/DevOps and version control tools like Git\n•  Familiarity with compliance standards (e.g., Accessibility, GDPR, PCI-DSS) in cloud solutions\nQualifications\n\nWhat’s needed to succeed (Minimum Qualifications):\n•  Bachelor's degree or 4 years of relevant work experience in Computer science engineering or relevant field\n\nNice to have:\n•  Cloud certification\n•  SaFe Agile\n•  4+ years of experience in design, development, documenting, testing, and debugging of new and existing software systems and/or applications for market sale or large-scale proprietary software for internal use in an agile environment\n•  Web development, Angular, React, .NET, Python, AWS Lambda\n•  Must be legally authorized to work in the United States for any employer without sponsorship\n•  Successful completion of interview required to meet job qualification\n•  Reliable, punctual attendance is an essential function of the position\n\nWhat will help you propel from the pack (Preferred Qualifications):\n•  Knowledge of AWS ECS, S3, Lambdas and PostGres\n•  Knowledge of Kong, Copilot, and UI Accessibility.\n\nThe base pay range for this role is $109,820.00 to $142,936.00.\nThe base salary range/hourly rate listed is dependent on job-related, factors such as experience, education, and skills. This position is also eligible for bonus and/or long-term incentive compensation awards.\n\nYou may be eligible for the following competitive benefits: medical, dental, vision, life, accident & disability, parental leave, employee assistance program, commuter, paid holidays, paid time off, 401(k) and flight privileges.\n\nUnited Airlines is an equal opportunity employer. United Airlines recruits, employs, trains, compensates and promotes regardless of race, religion, color, national origin, gender identity, sexual orientation, physical ability, age, veteran status and other protected status as required by applicable law. Equal Opportunity Employer - Minorities/Women/Veterans/Disabled/LGBT.\n\nWe will ensure that individuals with disabilities are provided reasonable accommodation to participate in the job application or interview process, to perform crucial job functions. Please contact JobAccommodations@united.com to request accommodation.",
+        "job_is_remote": false,
+        "job_posted_at": "23 hours ago",
+        "job_posted_at_timestamp": 1764543600,
+        "job_posted_at_datetime_utc": "2025-11-30T23:00:00.000Z",
+        "job_location": "Chicago, IL",
+        "job_city": "Chicago",
+        "job_state": "Illinois",
+        "job_country": "US",
+        "job_latitude": 41.88325,
+        "job_longitude": -87.6323879,
+        "job_benefits": [
+          "health_insurance",
+          "dental_coverage",
+          "paid_time_off"
+        ],
+        "job_google_link": "https://www.google.com/search?q=jobs&gl=us&hl=en&udm=8#vhid=vt%3D20/docid%3DY4Ihu7eDiwe7smUxAAAAAA%3D%3D&vssid=jobs-detail-viewer",
+        "job_salary": null,
+        "job_min_salary": null,
+        "job_max_salary": null,
+        "job_salary_period": null,
+        "job_highlights": {
+          "Qualifications": [
+            "  Proven experience delivering full stack applications",
+            "  Solid technical understanding of cloud platforms (AWS/Azure/GCP), APIs, CI/CD, web technologies, and DevOps practices",
+            "  Experience with Agile/Scrum or SAFe frameworks and tools (e.g., Jira, Confluence, Azure DevOps)",
+            "  Excellent communication, leadership, and documentation abilities",
+            "  Knowledge of APIs, JSON, XML, and OAuth",
+            "  Experience with language: Node.js, React and/or Angular, .NET, Python",
+            "  Familiarity with CI/CD pipelines/DevOps and version control tools like Git",
+            "  Familiarity with compliance standards (e.g., Accessibility, GDPR, PCI-DSS) in cloud solutions",
+            "  Bachelor's degree or 4 years of relevant work experience in Computer science engineering or relevant field",
+            "  Cloud certification",
+            "  SaFe Agile",
+            "  4+ years of experience in design, development, documenting, testing, and debugging of new and existing software systems and/or applications for market sale or large-scale proprietary software for internal use in an agile environment",
+            "  Web development, Angular, React, .NET, Python, AWS Lambda",
+            "  Must be legally authorized to work in the United States for any employer without sponsorship",
+            "  Successful completion of interview required to meet job qualification",
+            "  Reliable, punctual attendance is an essential function of the position"
+          ],
+          "Benefits": [
+            "The base pay range for this role is $109,820.00 to $142,936.00",
+            "The base salary range/hourly rate listed is dependent on job-related, factors such as experience, education, and skills",
+            "This position is also eligible for bonus and/or long-term incentive compensation awards",
+            "You may be eligible for the following competitive benefits: medical, dental, vision, life, accident & disability, parental leave, employee assistance program, commuter, paid holidays, paid time off, 401(k) and flight privileges"
+          ],
+          "Responsibilities": [
+            "The Senior Developer, IT will be responsible for the development of Loyalty critical applications",
+            "This role will need to have full stack expertise on technical development in Loyalty technologies including front end customer applications, API development and integration, database & AWS cloud-based services",
+            "  Lead development, execution, and delivery of artifacts/code for Loyalty applications",
+            "  Collaborate with technology leads/developers, business SMEs, UX designers, and technology stakeholders to define technical deliveries",
+            "  Drive integration of Loyalty services and UIs with back-end systems, APIs and analytics platforms",
+            "  Champion Agile/Scrum methodologies, participate in sprint planning, stand-ups, and retrospectives",
+            "  Lead integrations between internal platforms, external systems, and cloud services",
+            "  Collaborate with development, infrastructure, and product teams to gather integration requirements and translate them into scalable technical solutions",
+            "  Lead unit and integration testing and assist QA teams with end-to-end testing",
+            "  Stay current with industry best practices and emerging technologies in development and integration",
+            "  Highlight and document risks, issues, blockers and dependencies; discuss with team project manager on regular basis",
+            "  Coordinate with Cloud infrastructure teams to ensure scalable, secure, and high-performance deployments",
+            "  Oversee vendor relationships and third-party integrations when applicable",
+            "  Support and guide the team in removing blockers, maintaining momentum, and ensuring quality"
+          ]
+        },
+        "job_onet_soc": "15113400",
+        "job_onet_job_zone": "3"
+      },
+      {
+        "job_id": "al-XOHsSXXDWfM1-AAAAAA==",
+        "job_title": "Dotnet Architect with Azure Services and Angular/React",
+        "employer_name": "Falcon Smart IT (FalconSmartIT)",
+        "employer_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAbawhAXWIUS76Q5WbdSl0XE1f8z911_W8JD8a&s=0",
+        "employer_website": null,
+        "job_publisher": "LinkedIn",
+        "job_employment_type": "Full-time",
+        "job_employment_types": [
+          "FULLTIME"
+        ],
+        "job_apply_link": "https://www.linkedin.com/jobs/view/dotnet-architect-with-azure-services-and-angular-react-at-falcon-smart-it-falconsmartit-4325017769?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "job_apply_is_direct": false,
+        "apply_options": [
+          {
+            "publisher": "LinkedIn",
+            "apply_link": "https://www.linkedin.com/jobs/view/dotnet-architect-with-azure-services-and-angular-react-at-falcon-smart-it-falconsmartit-4325017769?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "Jobright",
+            "apply_link": "https://jobright.ai/jobs/info/692daf414c474121999d2c1f?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "BeBee",
+            "apply_link": "https://us.bebee.com/job/532a49c2b8a14b5c3d182a5f2336a58e?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          }
+        ],
+        "job_description": "Job Title: Dotnet Architect with Azure Services and Angular/React\n\nLocation: On-Site (Chicago, IL)\n\nJob Type: Full-Time\n\nJob Description:\n\nExpected Outcome – Seeking a highly skilled Technical Architect with hands on expertise in the .NET technology, Full stack with Data Migrations to lead the end-to-end architecture of the project for legal domain. Responsible for designing scalable, secure, and performance-optimized solutions using technologies like C#, ASP.NET, Web API, .NET (Core and Framework), Angular/React, NUnit and Azure. Define and maintain high-level and low-level design documentation, guide implementation according to architectural standards, and ensure adherence to best practices in coding, testing, and deployment. Strong collaboration with product owners, business analysts, and cross-functional teams to translate complex business requirements into robust technical designs. Establish architectural governance models, conduct design reviews, and ensure adherence to architectural decisions.\n\nSkills / Experience\n\n· 18+ years of hands-on experience in web application development using C#, Web API, .NET (Core and Framework)\n\n· 8 years of experience in architecture design with Azure, .NET, React and NUnit\n\n· 5+ years of experience in defining the solution, implementing the design, developing, and deploying web applications in Azure platform\n\n· 4+ years of experience in Microservices, Containerization and Data Migration projects\n\n· 5+ years of experience in unit testing using XUnit, NUnit, etc; Experience in HTML5, CSS3, jQuery and JSON, Bootstrap\n\n· 12+ years of solid experience with relational and NoSQL databases (SQL Server, PostgreSQL, Cosmos DB)\n\n· Deep understanding of Software Design Principles and Software Design Patterns\n\nJob / Role Description\n\n· Lead the architectural design and development of .NET applications, ensuring scalability, performance, and security.\n\n· Design and implement cloud architectures on Microsoft Azure, leveraging services such as Azure App Services, Azure Functions, Azure SQL Database, and Azure Kubernetes Service (AKS).\n\n· Develop and promote microservices-based solutions, ensuring modularity, reusability, and maintainability.\n\n· Oversee the design and implementation of RESTful APIs, ensuring consistency and adherence to best practices.\n\n· Work closely with development, product teams and customer to translate business requirements into technical solutions.\n\n· Provide technical guidance and mentorship to development teams, fostering a culture of continuous improvement.\n\n· Establish and enforce architectural standards, coding practices, and security protocols.\n\n· Stay up to date with emerging technologies and contribute to architectural decisions.\n\n· Strong leadership, mentoring, and communication skills, with a track record of guiding teams and driving technical initiatives.\n\n· Implement best practices for application performance, security, and scalability.\n\n· Optimize application performance through code optimization, caching strategies, and database indexing.\n\n· Collaborate with UX/UI designers and product teams to translate requirements into high-quality, user-centered designs and implementations\n\n· Conduct code reviews and enforce coding standards across the team\n\nSoft/Other skills\n\n· Ability to see the big picture, align technical decisions with business goals, and design scalable future-proof solutions\n\n· Analytical mindset with a proactive approach to identifying risks, resolving challenges, and proposing innovative solutions\n\n· Provide constructive feedback during code reviews and be open to receiving feedback on your own code\n\n· Confident in making architectural decisions based on data, trade-offs, and long-term value\n\n· Strong interpersonal skills to build and maintain productive relationships with team members\n\n· Strong oral, presentation and written communication skills; organization, collaboration, and time management skills",
+        "job_is_remote": false,
+        "job_posted_at": "9 hours ago",
+        "job_posted_at_timestamp": 1764594000,
+        "job_posted_at_datetime_utc": "2025-12-01T13:00:00.000Z",
+        "job_location": "Chicago, IL",
+        "job_city": "Chicago",
+        "job_state": "Illinois",
+        "job_country": "US",
+        "job_latitude": 41.88325,
+        "job_longitude": -87.6323879,
+        "job_benefits": null,
+        "job_google_link": "https://www.google.com/search?q=jobs&gl=us&hl=en&udm=8#vhid=vt%3D20/docid%3Dal-XOHsSXXDWfM1-AAAAAA%3D%3D&vssid=jobs-detail-viewer",
+        "job_salary": null,
+        "job_min_salary": null,
+        "job_max_salary": null,
+        "job_salary_period": null,
+        "job_highlights": {
+          "Qualifications": [
+            "Expected Outcome – Seeking a highly skilled Technical Architect with hands on expertise in the .NET technology, Full stack with Data Migrations to lead the end-to-end architecture of the project for legal domain",
+            "Responsible for designing scalable, secure, and performance-optimized solutions using technologies like C#, ASP.NET, Web API, .NET (Core and Framework), Angular/React, NUnit and Azure",
+            "18+ years of hands-on experience in web application development using C#, Web API, .NET (Core and Framework)",
+            "8 years of experience in architecture design with Azure, .NET, React and NUnit",
+            "5+ years of experience in defining the solution, implementing the design, developing, and deploying web applications in Azure platform",
+            "4+ years of experience in Microservices, Containerization and Data Migration projects",
+            "5+ years of experience in unit testing using XUnit, NUnit, etc; Experience in HTML5, CSS3, jQuery and JSON, Bootstrap",
+            "12+ years of solid experience with relational and NoSQL databases (SQL Server, PostgreSQL, Cosmos DB)",
+            "Deep understanding of Software Design Principles and Software Design Patterns",
+            "Soft/Other skills",
+            "Ability to see the big picture, align technical decisions with business goals, and design scalable future-proof solutions",
+            "Analytical mindset with a proactive approach to identifying risks, resolving challenges, and proposing innovative solutions",
+            "Provide constructive feedback during code reviews and be open to receiving feedback on your own code",
+            "Confident in making architectural decisions based on data, trade-offs, and long-term value",
+            "Strong interpersonal skills to build and maintain productive relationships with team members",
+            "Strong oral, presentation and written communication skills; organization, collaboration, and time management skills"
+          ],
+          "Responsibilities": [
+            "Define and maintain high-level and low-level design documentation, guide implementation according to architectural standards, and ensure adherence to best practices in coding, testing, and deployment",
+            "Strong collaboration with product owners, business analysts, and cross-functional teams to translate complex business requirements into robust technical designs",
+            "Establish architectural governance models, conduct design reviews, and ensure adherence to architectural decisions",
+            "Lead the architectural design and development of .NET applications, ensuring scalability, performance, and security",
+            "Design and implement cloud architectures on Microsoft Azure, leveraging services such as Azure App Services, Azure Functions, Azure SQL Database, and Azure Kubernetes Service (AKS)",
+            "Develop and promote microservices-based solutions, ensuring modularity, reusability, and maintainability",
+            "Oversee the design and implementation of RESTful APIs, ensuring consistency and adherence to best practices",
+            "Work closely with development, product teams and customer to translate business requirements into technical solutions",
+            "Provide technical guidance and mentorship to development teams, fostering a culture of continuous improvement",
+            "Establish and enforce architectural standards, coding practices, and security protocols",
+            "Stay up to date with emerging technologies and contribute to architectural decisions",
+            "Strong leadership, mentoring, and communication skills, with a track record of guiding teams and driving technical initiatives",
+            "Implement best practices for application performance, security, and scalability",
+            "Optimize application performance through code optimization, caching strategies, and database indexing",
+            "Collaborate with UX/UI designers and product teams to translate requirements into high-quality, user-centered designs and implementations",
+            "Conduct code reviews and enforce coding standards across the team"
+          ]
+        },
+        "job_onet_soc": "15119900",
+        "job_onet_job_zone": "4"
+      },
+      {
+        "job_id": "klNm9rCIG2M6aVycAAAAAA==",
+        "job_title": "Lead Power BI Developer",
+        "employer_name": "BMO U.S.",
+        "employer_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAasg0xRKCnGdYf1LMLAoOe9akd-kdp1QNNj2Y&s=0",
+        "employer_website": null,
+        "job_publisher": "LinkedIn",
+        "job_employment_type": "Full-time",
+        "job_employment_types": [
+          "FULLTIME"
+        ],
+        "job_apply_link": "https://www.linkedin.com/jobs/view/lead-power-bi-developer-at-bmo-u-s-4340187256?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "job_apply_is_direct": false,
+        "apply_options": [
+          {
+            "publisher": "LinkedIn",
+            "apply_link": "https://www.linkedin.com/jobs/view/lead-power-bi-developer-at-bmo-u-s-4340187256?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "Ladders",
+            "apply_link": "https://www.theladders.com/job/power-bi-lead-developer-bdousallp-chicago-il_82954686?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "BeBee",
+            "apply_link": "https://us.bebee.com/job/625bf1d0b93c036b9f23c34e26dbab52?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "Chicago, IL - Americanlisted",
+            "apply_link": "https://chicago-il.americanlisted.com/jobs/ms-power-bi-lead-developer-chicago-il-onsite_8963046040.html?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          }
+        ],
+        "job_description": "We are seeking a Strategic Lead Power BI Developer to transform raw data into clear, actionable insights that drive business decisions. In this role, you'll work closely with cross-functional teams to understand business goals, uncover trends, and deliver visually compelling dashboards and reports using Power BI.\n\nResponsibilities\n• Creating, managing, and publishing Power BI Data Sources\n• Intermediate to advanced DAX skills such as creating DAX Measures, leveraging variables in measures, managing / adding and removing filters in measures, creating calculated fields in tables, creating calculated tables\n• Tuning data source design and measures for maximum performance\n• Creating, manage, and publish Power BI dashboard files\n• Develops tools and delivers training programs for use of reporting tools and self-serve analytics by non-analytical end users; may include delivery of training to audiences.\n• Works with different teams, management and stakeholders to enhance the usability and aesthetic appeal of data analytics solutions deployed in the organization.\n• Researches and applies continuous improvement in data visualization by identifying trends and patterns to transform raw data into actionable business insights.\n• Documents data flow, systems and processes to improve the design, implementation and management of business/group processes.\n\nQualifications:\n\nIntermediate to Advanced level of proficiency in Power BI:\n• Creating, managing, and publishing Power BI Data Sources\n• Intermediate to advanced DAX skills such as creating DAX Measures, leveraging variables in measures, managing / adding and removing filters in measures, creating calculated fields in tables, creating calculated tables\n• Tuning data source design and measures for maximum performance\n• Creating, manage, and publish Power BI dashboard files\n• Intermediate to advanced visualization skills\n\nAdditional Skills\n• Typically between 4 - 7 years of relevant experience and post-secondary degree in related field of study or an equivalent combination of education and experience.\n• Technical proficiency gained through education and/or business experience.\n• Certifications such as PL-300 or other relevant work.\n\nSalary:\n\n$74,000.00 - $138,000.00\n\nPay Type:\n\nSalaried\n\nThe above represents BMO Financial Group’s pay range and type.\n\nSalaries will vary based on factors such as location, skills, experience, education, and qualifications for the role, and may include a commission structure. Salaries for part-time roles will be pro-rated based on number of hours regularly worked. For commission roles, the salary listed above represents BMO Financial Group’s expected target for the first year in this position.\n\nBMO Financial Group’s total compensation package will vary based on the pay type of the position and may include performance-based incentives, discretionary bonuses, as well as other perks and rewards. BMO also offers health insurance, tuition reimbursement, accident and life insurance, and retirement savings plans. To view more details of our benefits, please visit: https://jobs.bmo.com/global/en/Total-Rewards\n\nAbout Us\n\nAt BMO we are driven by a shared Purpose: Boldly Grow the Good in business and life. It calls on us to create lasting, positive change for our customers, our communities and our people. By working together, innovating and pushing boundaries, we transform lives and businesses, and power economic growth around the world.\n\nAs a member of the BMO team you are valued, respected and heard, and you have more ways to grow and make an impact. We strive to help you make an impact from day one – for yourself and our customers. We’ll support you with the tools and resources you need to reach new milestones, as you help our customers reach theirs. From in-depth training and coaching, to manager support and network-building opportunities, we’ll help you gain valuable experience, and broaden your skillset.\n\nTo find out more visit us at https://jobs.bmo.com/us/en\n\nBMO is proud to be an equal employment opportunity employer. We evaluate applicants without regard to race, religion, color, national origin, sex (including pregnancy, childbirth, or related medical conditions), sexual orientation, gender identity, gender expression, transgender status, sexual stereotypes, age, status as a protected veteran, status as an individual with a disability, or any other legally protected characteristics. We also consider applicants with criminal histories, consistent with applicable federal, state and local law.\n\nBMO is committed to working with and providing reasonable accommodations to individuals with disabilities. If you need a reasonable accommodation because of a disability for any part of the employment process, please send an e-mail to BMOCareers.Support@bmo.com and let us know the nature of your request and your contact information.\n\nNote to Recruiters: BMO does not accept unsolicited resumes from any source other than directly from a candidate. Any unsolicited resumes sent to BMO, directly or indirectly, will be considered BMO property. BMO will not pay a fee for any placement resulting from the receipt of an unsolicited resume. A recruiting agency must first have a valid, written and fully executed agency agreement contract for service to submit resumes.",
+        "job_is_remote": false,
+        "job_posted_at": "47 minutes ago",
+        "job_posted_at_timestamp": 1764626400,
+        "job_posted_at_datetime_utc": "2025-12-01T22:00:00.000Z",
+        "job_location": "Chicago, IL",
+        "job_city": "Chicago",
+        "job_state": "Illinois",
+        "job_country": "US",
+        "job_latitude": 41.88325,
+        "job_longitude": -87.6323879,
+        "job_benefits": [
+          "health_insurance"
+        ],
+        "job_google_link": "https://www.google.com/search?q=jobs&gl=us&hl=en&udm=8#vhid=vt%3D20/docid%3DklNm9rCIG2M6aVycAAAAAA%3D%3D&vssid=jobs-detail-viewer",
+        "job_min_salary": 74000,
+        "job_max_salary": 138000,
+        "job_salary_period": "YEAR",
+        "job_highlights": {
+          "Qualifications": [
+            "Intermediate to Advanced level of proficiency in Power BI:",
+            "Creating, managing, and publishing Power BI Data Sources",
+            "Intermediate to advanced DAX skills such as creating DAX Measures, leveraging variables in measures, managing / adding and removing filters in measures, creating calculated fields in tables, creating calculated tables",
+            "Intermediate to advanced visualization skills",
+            "Typically between 4 - 7 years of relevant experience and post-secondary degree in related field of study or an equivalent combination of education and experience",
+            "Technical proficiency gained through education and/or business experience",
+            "Certifications such as PL-300 or other relevant work"
+          ],
+          "Benefits": [
+            "$74,000.00 - $138,000.00",
+            "The above represents BMO Financial Group’s pay range and type",
+            "Salaries will vary based on factors such as location, skills, experience, education, and qualifications for the role, and may include a commission structure",
+            "Salaries for part-time roles will be pro-rated based on number of hours regularly worked",
+            "For commission roles, the salary listed above represents BMO Financial Group’s expected target for the first year in this position",
+            "BMO Financial Group’s total compensation package will vary based on the pay type of the position and may include performance-based incentives, discretionary bonuses, as well as other perks and rewards",
+            "BMO also offers health insurance, tuition reimbursement, accident and life insurance, and retirement savings plans"
+          ],
+          "Responsibilities": [
+            "In this role, you'll work closely with cross-functional teams to understand business goals, uncover trends, and deliver visually compelling dashboards and reports using Power BI",
+            "Creating, managing, and publishing Power BI Data Sources",
+            "Intermediate to advanced DAX skills such as creating DAX Measures, leveraging variables in measures, managing / adding and removing filters in measures, creating calculated fields in tables, creating calculated tables",
+            "Tuning data source design and measures for maximum performance",
+            "Creating, manage, and publish Power BI dashboard files",
+            "Develops tools and delivers training programs for use of reporting tools and self-serve analytics by non-analytical end users; may include delivery of training to audiences",
+            "Works with different teams, management and stakeholders to enhance the usability and aesthetic appeal of data analytics solutions deployed in the organization",
+            "Researches and applies continuous improvement in data visualization by identifying trends and patterns to transform raw data into actionable business insights",
+            "Documents data flow, systems and processes to improve the design, implementation and management of business/group processes",
+            "Tuning data source design and measures for maximum performance",
+            "Creating, manage, and publish Power BI dashboard files",
+            "We’ll support you with the tools and resources you need to reach new milestones, as you help our customers reach theirs"
+          ]
+        },
+        "job_onet_soc": "15119900",
+        "job_onet_job_zone": "4"
+      },
+      {
+        "job_id": "yQk-04j60XyMfmGaAAAAAA==",
+        "job_title": "Frontend Web Developer",
+        "employer_name": "accentedge, LLC",
+        "employer_logo": null,
+        "employer_website": "https://www.accentedge.digital",
+        "job_publisher": "Indeed",
+        "job_employment_type": "Full-time",
+        "job_employment_types": [
+          "FULLTIME"
+        ],
+        "job_apply_link": "https://www.indeed.com/viewjob?jk=6e149a6506fe0eba&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "job_apply_is_direct": true,
+        "apply_options": [
+          {
+            "publisher": "Indeed",
+            "apply_link": "https://www.indeed.com/viewjob?jk=6e149a6506fe0eba&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": true
+          },
+          {
+            "publisher": "ZipRecruiter",
+            "apply_link": "https://www.ziprecruiter.com/c/accentedge,-LLC/Job/Frontend-Web-Developer/-in-Chicago,IL?jid=fec737dc8fbc7f2a&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": true
+          },
+          {
+            "publisher": "Glassdoor",
+            "apply_link": "https://www.glassdoor.com/job-listing/frontend-web-developer-accentedge-llc-JV_IC1128808_KO0,22_KE23,37.htm?jl=1009885132648&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": true
+          },
+          {
+            "publisher": "LinkedIn",
+            "apply_link": "https://www.linkedin.com/jobs/view/frontend-web-developer-at-accentedge-4305164413?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "Monster",
+            "apply_link": "https://www.monster.com/job-openings/frontend-web-developer-chicago-il--8cd5a402-1226-4674-8a1f-a377cc2e0e9c?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": true
+          },
+          {
+            "publisher": "Ladders",
+            "apply_link": "https://www.theladders.com/job/frontend-web-developer-accentedge-llc-chicago-il_83515666?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "BeBee",
+            "apply_link": "https://us.bebee.com/job/01b16852f3beb64455b38c341f7d4fd9?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "Angular Jobs",
+            "apply_link": "https://angular-jobs.com/jobs/164669383-frontend-web-developer?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          }
+        ],
+        "job_description": "Join us at accentedge as a Frontend Web Developer, where you'll be at the forefront of crafting engaging user interfaces that deliver exceptional user experiences. In this role, you will leverage your expertise in modern web technologies and design principles to transform ideas and prototypes into fully functional web applications.\n\nKey Responsibilities:\n• Develop responsive and visually appealing web applications using HTML, CSS, and JavaScript.\n• Collaborate with UI/UX designers to implement and optimize designs according to best practices and user-centric methodologies.\n• Work with RESTful APIs and third-party services to integrate dynamic content into applications.\n• Ensure cross-browser compatibility and optimize applications for different devices and screen sizes.\n• Implement performance and responsiveness enhancements to improve user experience.\n• Participate in code reviews and maintain high standards of code quality and best practices.\n• Stay current with emerging technologies and trends in frontend development and propose new tools and techniques that can improve product delivery.\n• Contribute to team efforts in agile development cycles and collaborate effectively with backend developers.\n\nRequirements\n• Experience: Minimum of 3 years of professional experience in frontend web development.\n• Technical Skills: Proficiency in HTML5, CSS3, and JavaScript (ES6+), as well as familiarity with frameworks like React, Vue.js, or Angular.\n• Responsive Design: Strong understanding of responsive design principles and mobile-first approaches.\n• Version Control: Proficient in using version control systems, particularly Git.\n• Performance Optimization: Experience with performance optimization techniques such as lazy loading, code splitting, and caching strategies.\n• Cross-browser Compatibility: Knowledge of best practices to ensure compatibility across various browsers and devices.\n• Testing & Debugging: Familiarity with modern debugging and testing techniques, including unit and integration testing.\n• Soft Skills: Strong communication, problem-solving abilities, and a collaborative mindset.\n\nPreferred Qualifications:\n• Experience with CSS preprocessors like SASS or LESS.\n• Understanding of web accessibility standards (WCAG) and practices.\n• Familiarity with build tools such as Webpack, Gulp, or similar task runners.\n• Bachelor’s degree in Computer Science, Web Development, or a related field.\n\nBenefits\n• Join a forward-looking team at the forefront of digital transformation.\n• Work on high-impact, large-scale WordPress projects that challenge your expertise.\n• Competitive compensation and benefits package.\n• Flexible work arrangements and a collaborative, innovative work culture.",
+        "job_is_remote": false,
+        "job_posted_at": null,
+        "job_posted_at_timestamp": null,
+        "job_posted_at_datetime_utc": null,
+        "job_location": "Chicago, IL",
+        "job_city": "Chicago",
+        "job_state": "Illinois",
+        "job_country": "US",
+        "job_latitude": 41.88325,
+        "job_longitude": -87.6323879,
+        "job_benefits": [
+          "health_insurance"
+        ],
+        "job_google_link": "https://www.google.com/search?q=jobs&gl=us&hl=en&udm=8#vhid=vt%3D20/docid%3DyQk-04j60XyMfmGaAAAAAA%3D%3D&vssid=jobs-detail-viewer",
+        "job_salary": null,
+        "job_min_salary": null,
+        "job_max_salary": null,
+        "job_salary_period": null,
+        "job_highlights": {
+          "Qualifications": [
+            "Experience: Minimum of 3 years of professional experience in frontend web development",
+            "Technical Skills: Proficiency in HTML5, CSS3, and JavaScript (ES6+), as well as familiarity with frameworks like React, Vue.js, or Angular",
+            "Responsive Design: Strong understanding of responsive design principles and mobile-first approaches",
+            "Version Control: Proficient in using version control systems, particularly Git",
+            "Performance Optimization: Experience with performance optimization techniques such as lazy loading, code splitting, and caching strategies",
+            "Cross-browser Compatibility: Knowledge of best practices to ensure compatibility across various browsers and devices",
+            "Testing & Debugging: Familiarity with modern debugging and testing techniques, including unit and integration testing",
+            "Soft Skills: Strong communication, problem-solving abilities, and a collaborative mindset"
+          ],
+          "Benefits": [
+            "Join a forward-looking team at the forefront of digital transformation",
+            "Work on high-impact, large-scale WordPress projects that challenge your expertise",
+            "Competitive compensation and benefits package",
+            "Flexible work arrangements and a collaborative, innovative work culture"
+          ],
+          "Responsibilities": [
+            "In this role, you will leverage your expertise in modern web technologies and design principles to transform ideas and prototypes into fully functional web applications",
+            "Develop responsive and visually appealing web applications using HTML, CSS, and JavaScript",
+            "Collaborate with UI/UX designers to implement and optimize designs according to best practices and user-centric methodologies",
+            "Work with RESTful APIs and third-party services to integrate dynamic content into applications",
+            "Ensure cross-browser compatibility and optimize applications for different devices and screen sizes",
+            "Implement performance and responsiveness enhancements to improve user experience",
+            "Participate in code reviews and maintain high standards of code quality and best practices",
+            "Stay current with emerging technologies and trends in frontend development and propose new tools and techniques that can improve product delivery",
+            "Contribute to team efforts in agile development cycles and collaborate effectively with backend developers"
+          ]
+        },
+        "job_onet_soc": "15113400",
+        "job_onet_job_zone": "3"
+      },
+      {
+        "job_id": "lo8cPDPhJSRBsQ3AAAAAAA==",
+        "job_title": "Senior Software Engineer (Go/Java/Python, AWS)",
+        "employer_name": "Capital One",
+        "employer_logo": null,
+        "employer_website": "https://www.capitalone.com",
+        "job_publisher": "Capital One Careers",
+        "job_employment_type": "Full-time and Part-time",
+        "job_employment_types": [
+          "FULLTIME",
+          "PARTTIME"
+        ],
+        "job_apply_link": "https://www.capitalonecareers.com/job/chicago/senior-software-engineer-go-java-python-aws/1732/85255856528?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "job_apply_is_direct": false,
+        "apply_options": [
+          {
+            "publisher": "Capital One Careers",
+            "apply_link": "https://www.capitalonecareers.com/job/chicago/senior-software-engineer-go-java-python-aws/1732/85255856528?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "Indeed",
+            "apply_link": "https://www.indeed.com/viewjob?jk=b3dd8ac9d09ec984&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "ZipRecruiter",
+            "apply_link": "https://www.ziprecruiter.com/c/Capital-One/Job/Senior-Software-Engineer-(Go-Java-Python,-AWS)/-in-Chicago,IL?jid=4cbf11fd74bf37b3&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "Glassdoor",
+            "apply_link": "https://www.glassdoor.com/job-listing/senior-software-engineer-go-java-python-aws-information-technology-senior-management-forum-JV_IC1128808_KO0,43_KE44,90.htm?jl=1009851239911&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "LinkedIn",
+            "apply_link": "https://www.linkedin.com/jobs/view/senior-software-engineer-go-java-python-aws-at-capital-one-4338502979?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "Talents By Vaia",
+            "apply_link": "https://talents.vaia.com/companies/capital-one/senior-software-engineer-go-java-python-aws-33119620/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "Teal",
+            "apply_link": "https://www.tealhq.com/job/senior-software-engineer-go-java-python-aws_2ba89236-421d-43a9-b54f-8d504f0b2491?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "Experteer",
+            "apply_link": "https://us.experteer.com/career/view-jobs/senior-software-engineer-go-java-python-aws-chicago-il-usa-53549206?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          }
+        ],
+        "job_description": "Senior Software Engineer (Go/Java/Python, AWS)\n\nDo you love building and pioneering in the technology space? Do you enjoy solving complex business problems in a fast-paced, collaborative, inclusive, and iterative delivery environment? At Capital One, you'll be part of a big group of makers, breakers, doers and disruptors, who love to solve real problems and meet real customer needs. We are seeking Back End Software Engineers who are passionate about marrying data with emerging technologies. As a Capital One Software Engineer, you’ll have the opportunity to be on the forefront of driving a major transformation within Capital One.\n\nJoin the Core Modernization Team at Capital One, where we're at the forefront of a multi-year effort to revolutionize our credit card processing systems. We're moving away from legacy mainframes to build a modern, cloud-native platform that will manage the entire credit card lifecycle, from issuance to retirement. This is a critical initiative with a direct impact on our customers, and your work will be central to our success.\n\nAs a Senior Engineer on our team, you'll be a key driver of this transformation. You'll own the hands-on implementation of complex systems, lead technical decisions, and mentor junior developers. Your work will directly impact the design, architecture, and delivery of our target state solutions, bringing them from concept to production.\n\nWhat You’ll Do:\n• Collaborate with and across Agile teams to design, develop, test, implement, and support technical solutions in full-stack development tools and technologies\n• Share your passion for staying on top of tech trends, experimenting with and learning new technologies, participating in internal & external technology communities, mentoring other members of the engineering community\n• Collaborate with digital product managers, and deliver robust cloud-based solutions that drive powerful experiences to help millions of Americans achieve financial empowerment\n• Utilize programming languages like Java, Python, SQL, Node, Go, and Scala, Open Source RDBMS and NoSQL databases, Container Orchestration services including Docker and Kubernetes, and a variety of AWS tools and services\n\nBasic Qualifications:\n• Bachelor’s Degree\n• At least 3 years of professional software engineering experience (Internship experience does not apply)\n\nPreferred Qualifications:\n• 5+ years of experience in at least one of the following: Java, Scala, Python, Go, or Node.js\n• 1+ years of experience with AWS, GCP, Azure, or another cloud service\n• 3+ years of experience in open source frameworks\n• 2+ years of experience in Agile practices\n\nAt this time, Capital One will not sponsor a new applicant for employment authorization, or offer any immigration related support for this position (i.e. H1B, F-1 OPT, F-1 STEM OPT, F-1 CPT, J-1, TN, E-2, E-3, L-1 and O-1, or any EADs or other forms of work authorization that require immigration support from an employer).\n\nThe minimum and maximum full-time annual salaries for this role are listed below, by location. Please note that this salary information is solely for candidates hired to perform work within one of these locations, and refers to the amount Capital One is willing to pay at the time of this posting. Salaries for part-time roles will be prorated based upon the agreed upon number of hours to be regularly worked.\n\nChicago, IL: $144,200 - $164,600 for Senior Software Engineer\n\nCandidates hired to work in other locations will be subject to the pay range associated with that location, and the actual annualized salary amount offered to any candidate at the time of hire will be reflected solely in the candidate’s offer letter.\n\nThis role is also eligible to earn performance based incentive compensation, which may include cash bonus(es) and/or long term incentives (LTI). Incentives could be discretionary or non discretionary depending on the plan.\n\nCapital One offers a comprehensive, competitive, and inclusive set of health, financial and other benefits that support your total well-being. Learn more at the Capital One Careers website. Eligibility varies based on full or part-time status, exempt or non-exempt status, and management level.\n\nThis role is expected to accept applications for a minimum of 5 business days.\n\nNo agencies please. Capital One is an equal opportunity employer (EOE, including disability/vet) committed to non-discrimination in compliance with applicable federal, state, and local laws. Capital One promotes a drug-free workplace. Capital One will consider for employment qualified applicants with a criminal history in a manner consistent with the requirements of applicable laws regarding criminal background inquiries, including, to the extent applicable, Article 23-A of the New York Correction Law; San Francisco, California Police Code Article 49, Sections 4901-4920; New York City’s Fair Chance Act; Philadelphia’s Fair Criminal Records Screening Act; and other applicable federal, state, and local laws and regulations regarding criminal background inquiries.\n\nIf you have visited our website in search of information on employment opportunities or to apply for a position, and you require an accommodation, please contact Capital One Recruiting at 1-800-304-9102 or via email at RecruitingAccommodation@capitalone.com. All information you provide will be kept confidential and will be used only to the extent required to provide needed reasonable accommodations.\n\nFor technical support or questions about Capital One's recruiting process, please send an email to Careers@capitalone.com\n\nCapital One does not provide, endorse nor guarantee and is not liable for third-party products, services, educational tools or other information available through this site.\n\nCapital One Financial is made up of several different entities. Please note that any position posted in Canada is for Capital One Canada, any position posted in the United Kingdom is for Capital One Europe and any position posted in the Philippines is for Capital One Philippines Service Corp. (COPSSC).",
+        "job_is_remote": false,
+        "job_posted_at": "6 days ago",
+        "job_posted_at_timestamp": 1764028800,
+        "job_posted_at_datetime_utc": "2025-11-25T00:00:00.000Z",
+        "job_location": "Chicago, IL",
+        "job_city": "Chicago",
+        "job_state": "Illinois",
+        "job_country": "US",
+        "job_latitude": 41.88325,
+        "job_longitude": -87.6323879,
+        "job_benefits": [
+          "health_insurance"
+        ],
+        "job_google_link": "https://www.google.com/search?q=jobs&gl=us&hl=en&udm=8#vhid=vt%3D20/docid%3Dlo8cPDPhJSRBsQ3AAAAAAA%3D%3D&vssid=jobs-detail-viewer",
+        "job_salary": null,
+        "job_min_salary": null,
+        "job_max_salary": null,
+        "job_salary_period": null,
+        "job_highlights": {
+          "Qualifications": [
+            "Bachelor’s Degree",
+            "At least 3 years of professional software engineering experience (Internship experience does not apply)",
+            "At this time, Capital One will not sponsor a new applicant for employment authorization, or offer any immigration related support for this position (i.e. H1B, F-1 OPT, F-1 STEM OPT, F-1 CPT, J-1, TN, E-2, E-3, L-1 and O-1, or any EADs or other forms of work authorization that require immigration support from an employer)"
+          ],
+          "Benefits": [
+            "Salaries for part-time roles will be prorated based upon the agreed upon number of hours to be regularly worked",
+            "Chicago, IL: $144,200 - $164,600 for Senior Software Engineer",
+            "Candidates hired to work in other locations will be subject to the pay range associated with that location, and the actual annualized salary amount offered to any candidate at the time of hire will be reflected solely in the candidate’s offer letter",
+            "This role is also eligible to earn performance based incentive compensation, which may include cash bonus(es) and/or long term incentives (LTI)",
+            "Incentives could be discretionary or non discretionary depending on the plan",
+            "Capital One offers a comprehensive, competitive, and inclusive set of health, financial and other benefits that support your total well-being"
+          ],
+          "Responsibilities": [
+            "You'll own the hands-on implementation of complex systems, lead technical decisions, and mentor junior developers",
+            "Your work will directly impact the design, architecture, and delivery of our target state solutions, bringing them from concept to production",
+            "Collaborate with and across Agile teams to design, develop, test, implement, and support technical solutions in full-stack development tools and technologies",
+            "Share your passion for staying on top of tech trends, experimenting with and learning new technologies, participating in internal & external technology communities, mentoring other members of the engineering community",
+            "Collaborate with digital product managers, and deliver robust cloud-based solutions that drive powerful experiences to help millions of Americans achieve financial empowerment",
+            "Utilize programming languages like Java, Python, SQL, Node, Go, and Scala, Open Source RDBMS and NoSQL databases, Container Orchestration services including Docker and Kubernetes, and a variety of AWS tools and services"
+          ]
+        },
+        "job_onet_soc": "15113200",
+        "job_onet_job_zone": "4"
+      },
+      {
+        "job_id": "8zWD0FV_9giZtFbZAAAAAA==",
+        "job_title": "Developer Node.js/AWS  - Information Technology",
+        "employer_name": "United Airlines",
+        "employer_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6DMswunk7F25_BeXSf2w8JVHG65s4lc7v5wfG&s=0",
+        "employer_website": "https://www.united.com",
+        "job_publisher": "United Airlines Jobs",
+        "job_employment_type": "Full-time",
+        "job_employment_types": [
+          "FULLTIME"
+        ],
+        "job_apply_link": "https://careers.united.com/us/en/job/WHQ00025801/Developer-Node-js-AWS-Information-Technology?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "job_apply_is_direct": false,
+        "apply_options": [
+          {
+            "publisher": "United Airlines Jobs",
+            "apply_link": "https://careers.united.com/us/en/job/WHQ00025801/Developer-Node-js-AWS-Information-Technology?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "JSfirm.com",
+            "apply_link": "https://www.jsfirm.com/Other/Developer+Nodejs/AWS++-+Information+Technology/Chicago-Illinois/jobID_1769858?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "LinkedIn",
+            "apply_link": "https://www.linkedin.com/jobs/view/developer-node-js-aws-information-technology-at-united-airlines-4335597612?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "JobGet",
+            "apply_link": "https://www.jobget.com/jobs/job/1cdfe8ef-51ed-4626-b78c-8fda3fd29dd6?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "JobLeads",
+            "apply_link": "https://www.jobleads.com/us/job/developer-node-js-aws-information-technology--chicago--eacd118fadd99784d290a8b4630475867?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "Snagajob",
+            "apply_link": "https://www.snagajob.com/jobs/1186017407?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "Jobcase",
+            "apply_link": "https://www.jobcase.com/jobs/view/n/U-124595574938?jlsrc=3&utm_term=Developer+Node.js/AWS++-+Information+Technology&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "Jobrapido",
+            "apply_link": "https://us.jobrapido.com/jobpreview/1448626002174410752?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": true
+          }
+        ],
+        "job_description": "Achieving our goals starts with supporting yours. Grow your career, access top-tier health and wellness benefits, build lasting connections with your team and our customers, and travel the world using our extensive route network.\n\nCome join us to create what’s next. Let’s define tomorrow, together.\n\nDescription\n\nThe Developer plays a vital role in creating and maintaining the strategic partnership between business needs and technology delivery. The Developer plans, designs, develops, and launches efficient systems and solutions supporting core organizational functions. This individual will utilize effective communication, analytical, and problem-solving skills to help identify, communicate/resolve issues, opportunities, or problems to maximize the benefit of IT and Business investments.\n\n· Writes code and develops software applications and tools using agile development methodologies. Designs, develops, and modifies software applications/systems that meet specifications. Provides support to the software development leads (Ex, Senior Developer)\n\n· Helps partner and collaborates with cross-functional teams to understand business requirements and deliver solutions. Participates in the design, architecture, and build phases aimed at producing high-quality deliverables. Assists in contributing to software documentation and user manuals\n\n· Complete comprehensive unit testing and debugging on all developed/enhanced software and support the deployment of software applications. Participates in code reviews to ensure code adheres to standards. Use design principles and product specifications to enhance software continuously\n\n· Demonstrates working knowledge of all core and common programming languages critical to the organization. Demonstrates technical proficiency in areas critical to the specific team/application. Applies security code best practices throughout the development cycle\n\n· Support and troubleshoot software systems as required, optimizing performance, resolving problems, and providing follow-up on all issues and solutions\n\n· Works on problems of moderate scope where analysis of situations or data requires a review of multiple considerations. Exercises judgment within defined procedures and practices to determine appropriate action\n\n· Receives general instructions on routine work and detailed instructions on new projects or assignments. Usually works with some supervision, working with the leader on unusual or complex matters\nQualifications\n\nRequired Skills:\n\n· Bachelor's degree in Computer Science, Engineering, Mathematics or related field\n\n· 3+ Experience with Cloud Automation Development Tool such as Git, Python/Bash/PowerShell Scripting\n\n· Hands-on development and proficient excellence in backend API development using Node.js Java and Python\n\n· Proficient in a coding language and building back-end components\n\n· Problem solving\n\n· Demonstrate advanced knowledge of SDLC processes inputs/outputs, standards and best practice\n\n· Demonstrate advanced knowledge of development methodologies, software design, and design patterns\n\n· Demonstrate advanced knowledge of the application of development domain areas and specific technologies and tool sets\n\nPreferred Experience:\n\n· AWS highly preferred\n\n· Dev Ops highly Experience\n\n· Exposure to APPD & Dynatrace\n\n· Agile Methodologies\n\n· .Net, C, C++, C#, Java · HTML, Java Script (Angular 2.0, JS), CSS\n\n· SQL, Oracle Experience, Relational DB Experience\n\n· Code Repositories like TFS\n\n· Chef/Ansible, Configuration tools\n\n· Continuous Integration & Continuous Deployment\n\n· Exposure to Couchbase NoSQL DB\n\nThe base pay range for this role is $87,780.00 to $114,376.00.\nThe base salary range/hourly rate listed is dependent on job-related, factors such as experience, education, and skills. This position is also eligible for bonus and/or long-term incentive compensation awards.\n\nYou may be eligible for the following competitive benefits: medical, dental, vision, life, accident & disability, parental leave, employee assistance program, commuter, paid holidays, paid time off, 401(k) and flight privileges.\n\nUnited Airlines is an equal opportunity employer. United Airlines recruits, employs, trains, compensates and promotes regardless of race, religion, color, national origin, gender identity, sexual orientation, physical ability, age, veteran status and other protected status as required by applicable law. Equal Opportunity Employer - Minorities/Women/Veterans/Disabled/LGBT.\n\nWe will ensure that individuals with disabilities are provided reasonable accommodation to participate in the job application or interview process, to perform crucial job functions. Please contact JobAccommodations@united.com to request accommodation.",
+        "job_is_remote": false,
+        "job_posted_at": "23 hours ago",
+        "job_posted_at_timestamp": 1764543600,
+        "job_posted_at_datetime_utc": "2025-11-30T23:00:00.000Z",
+        "job_location": "Chicago, IL",
+        "job_city": "Chicago",
+        "job_state": "Illinois",
+        "job_country": "US",
+        "job_latitude": 41.88325,
+        "job_longitude": -87.6323879,
+        "job_benefits": [
+          "paid_time_off",
+          "dental_coverage",
+          "health_insurance"
+        ],
+        "job_google_link": "https://www.google.com/search?q=jobs&gl=us&hl=en&udm=8#vhid=vt%3D20/docid%3D8zWD0FV_9giZtFbZAAAAAA%3D%3D&vssid=jobs-detail-viewer",
+        "job_salary": null,
+        "job_min_salary": null,
+        "job_max_salary": null,
+        "job_salary_period": null,
+        "job_highlights": {
+          "Qualifications": [
+            "Bachelor's degree in Computer Science, Engineering, Mathematics or related field",
+            "3+ Experience with Cloud Automation Development Tool such as Git, Python/Bash/PowerShell Scripting",
+            "Hands-on development and proficient excellence in backend API development using Node.js Java and Python",
+            "Proficient in a coding language and building back-end components",
+            "Problem solving",
+            "Demonstrate advanced knowledge of SDLC processes inputs/outputs, standards and best practice",
+            "Demonstrate advanced knowledge of development methodologies, software design, and design patterns",
+            "Demonstrate advanced knowledge of the application of development domain areas and specific technologies and tool sets"
+          ],
+          "Benefits": [
+            "The base pay range for this role is $87,780.00 to $114,376.00",
+            "The base salary range/hourly rate listed is dependent on job-related, factors such as experience, education, and skills",
+            "This position is also eligible for bonus and/or long-term incentive compensation awards",
+            "You may be eligible for the following competitive benefits: medical, dental, vision, life, accident & disability, parental leave, employee assistance program, commuter, paid holidays, paid time off, 401(k) and flight privileges"
+          ],
+          "Responsibilities": [
+            "The Developer plays a vital role in creating and maintaining the strategic partnership between business needs and technology delivery",
+            "The Developer plans, designs, develops, and launches efficient systems and solutions supporting core organizational functions",
+            "This individual will utilize effective communication, analytical, and problem-solving skills to help identify, communicate/resolve issues, opportunities, or problems to maximize the benefit of IT and Business investments",
+            "Writes code and develops software applications and tools using agile development methodologies",
+            "Designs, develops, and modifies software applications/systems that meet specifications",
+            "Provides support to the software development leads (Ex, Senior Developer)",
+            "Helps partner and collaborates with cross-functional teams to understand business requirements and deliver solutions",
+            "Participates in the design, architecture, and build phases aimed at producing high-quality deliverables",
+            "Assists in contributing to software documentation and user manuals",
+            "Complete comprehensive unit testing and debugging on all developed/enhanced software and support the deployment of software applications",
+            "Participates in code reviews to ensure code adheres to standards",
+            "Use design principles and product specifications to enhance software continuously",
+            "Demonstrates working knowledge of all core and common programming languages critical to the organization",
+            "Demonstrates technical proficiency in areas critical to the specific team/application",
+            "Applies security code best practices throughout the development cycle",
+            "Support and troubleshoot software systems as required, optimizing performance, resolving problems, and providing follow-up on all issues and solutions",
+            "Works on problems of moderate scope where analysis of situations or data requires a review of multiple considerations",
+            "Exercises judgment within defined procedures and practices to determine appropriate action",
+            "Receives general instructions on routine work and detailed instructions on new projects or assignments",
+            "Usually works with some supervision, working with the leader on unusual or complex matters"
+          ]
+        },
+        "job_onet_soc": "15113300",
+        "job_onet_job_zone": "4"
+      },
+      {
+        "job_id": "XXx9miqpBQMWHOMGAAAAAA==",
+        "job_title": "Software Engineer | High-Frequency Trading",
+        "employer_name": "Fionics",
+        "employer_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI8ErptwU26nKxAMCqndmjhad_7DQL3OhxGMOW&s=0",
+        "employer_website": "https://fionics.io",
+        "job_publisher": "LinkedIn",
+        "job_employment_type": "Full-time",
+        "job_employment_types": [
+          "FULLTIME"
+        ],
+        "job_apply_link": "https://www.linkedin.com/jobs/view/software-engineer-high-frequency-trading-at-fionics-4324886031?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "job_apply_is_direct": false,
+        "apply_options": [
+          {
+            "publisher": "LinkedIn",
+            "apply_link": "https://www.linkedin.com/jobs/view/software-engineer-high-frequency-trading-at-fionics-4324886031?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "Jooble",
+            "apply_link": "https://jooble.org/jdp/-3062642434368593058?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "Talents By Vaia",
+            "apply_link": "https://talents.vaia.com/companies/jobright-ai/software-engineer-net-mid-level-31701439/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "Talent.com",
+            "apply_link": "https://www.talent.com/view?id=aab33fff4ebd&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "BeBee",
+            "apply_link": "https://us.bebee.com/job/6610b470402a03d124f023453dc2c578?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "Jobilize",
+            "apply_link": "https://www.jobilize.com/job/us-il-chicago-react-software-engineer-mid-level-spiderrock-platform?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "Jobs Trabajo.org",
+            "apply_link": "https://us.trabajo.org/job-3821-0e4f7d3cc0af02074ce5660289a8a9f5?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          }
+        ],
+        "job_description": "Software Engineer - Quantitative Finance\n\n40+ top trading firms seeking exceptional engineers. Multiple immediate openings.\n\nWhat you'll do:\n• Build trading systems and market data infrastructure\n• Develop quantitative research platforms and tools\n• Optimize performance-critical financial applications\n\nRequirements:\n• 2+ years software engineering experience\n• Strong C++/Python/Java skills\n• Trading experience preferred but not essential\n\nOur network:\n• Pay: $150K-$800K+ based on experience\n• Locations: Chicago, Remote\n• Focus: Trading platforms, risk systems, data infrastructure\n\nFrom high-growth prop firms to established systematic funds.\n\nReady to engineer the markets? Apply now for confidential discussions.",
+        "job_is_remote": false,
+        "job_posted_at": "4 days ago",
+        "job_posted_at_timestamp": 1764201600,
+        "job_posted_at_datetime_utc": "2025-11-27T00:00:00.000Z",
+        "job_location": "Chicago, IL",
+        "job_city": "Chicago",
+        "job_state": "Illinois",
+        "job_country": "US",
+        "job_latitude": 41.88325,
+        "job_longitude": -87.6323879,
+        "job_benefits": null,
+        "job_google_link": "https://www.google.com/search?q=jobs&gl=us&hl=en&udm=8#vhid=vt%3D20/docid%3DXXx9miqpBQMWHOMGAAAAAA%3D%3D&vssid=jobs-detail-viewer",
+        "job_min_salary": 150000,
+        "job_max_salary": 800000,
+        "job_salary_period": "YEAR",
+        "job_highlights": {
+          "Qualifications": [
+            "2+ years software engineering experience",
+            "Strong C++/Python/Java skills"
+          ],
+          "Benefits": [
+            "Pay: $150K-$800K+ based on experience",
+            "Locations: Chicago, Remote"
+          ],
+          "Responsibilities": [
+            "Build trading systems and market data infrastructure",
+            "Develop quantitative research platforms and tools",
+            "Optimize performance-critical financial applications"
+          ]
+        },
+        "job_onet_soc": "15113200",
+        "job_onet_job_zone": "4"
+      },
+      {
+        "job_id": "4UJZtHUxZ-37NQ-PAAAAAA==",
+        "job_title": "SENIOR WEB DEVELOPER",
+        "employer_name": "Plan B, Inc.",
+        "employer_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9AyVmi-LQ0Xtm6k0AwJpuQHblHi5gzdcUP7gi&s=0",
+        "employer_website": "https://www.planbinc.com",
+        "job_publisher": "Indeed",
+        "job_employment_type": "Contractor",
+        "job_employment_types": [
+          "CONTRACTOR"
+        ],
+        "job_apply_link": "https://www.indeed.com/viewjob?jk=7ea646ea367b6fe7&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "job_apply_is_direct": false,
+        "apply_options": [
+          {
+            "publisher": "Indeed",
+            "apply_link": "https://www.indeed.com/viewjob?jk=7ea646ea367b6fe7&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "ZipRecruiter",
+            "apply_link": "https://www.ziprecruiter.com/c/Ventures-Unlimited-Inc/Job/Senior-Web-UI-Developer/-in-Chicago,IL?jid=75154df4ba575032&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "Built In Chicago",
+            "apply_link": "https://www.builtinchicago.org/job/senior-web-developer/7531619?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "Built In",
+            "apply_link": "https://builtin.com/job/senior-web-developer/7531619?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "LinkedIn",
+            "apply_link": "https://www.linkedin.com/jobs/view/senior-web-developer-at-apex-fintech-solutions-4290998740?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "SmartRecruiters Job Search",
+            "apply_link": "https://jobs.smartrecruiters.com/Mindlance2/743999652558387-senior-web-developer?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "Jooble",
+            "apply_link": "https://jooble.org/jdp/2665125907386204509?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "Experteer",
+            "apply_link": "https://us.experteer.com/career/view-jobs/senior-web-developer-chicago-il-usa-54402686?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          }
+        ],
+        "job_description": "Supercharge your coding career in a dynamic urban setting at a thriving independent ad agency known for high-powered digital thinking and award-winning creative. Our recently renovated loft space is a highly collaborative work environment in the heart of Chicago’s buzzing River North entertainment district. Surround yourself with dining, shopping, and easy transit…enjoying urban working at its finest. Or, take advantage of our flexible work-from-home time to find the focus you need to excel!\n\nTeam up with talented marketing specialists and gifted creative minds to bring to life world of web-based solutions. Brainstorm with colleagues over strategic approaches to building smart digital experiences. Renew your passion for problem-solving as a critical part of our ‘exceptional’ agency culture – one that rewards hustle, hard work, and instinct.\n\nGet started on a freelance basis and –– who knows –– you may just fall in love with agency life!\n\nAbout the Job\nWe are looking for an experienced Back-End Developer to join our IT team (preferably with agency experience)! As a Back-end Developer, you will be responsible for the server-side web application logic as well as for the integration of the front-end part to help us manage a growing variety of digital development needs—coding responsive and mobile-friendly emails, landing pages and full-fledged websites. Minimum of 5 years of hands-on web development experience. Ability to multi-task and comfortable juggling several projects at once. Experience working in a fast-paced agency environment strongly preferred. Outstanding attention to detail. Flexibility to adapt to design requirement changes. Proven ability to manage multiple, on-going timelines, as well as daily rush asks. A core understanding of industry best practices across digital channels. You’ll be supporting our digital team in executing a wide range of initiatives on an ongoing, project-based basis. If you thrive on variety and are looking for a fun, rewarding way to put your skills to the test, join our exceptional development team and let’s get growing!\n\nRequired Skills\n• PHP/MySQL\n• Javascript\n• Custom API’s (CRM platforms, cloud-based media management)\n• MAMP/or local setup preference (must be able to set up local environments for all projects with multiple versions of PHP installed to work on sites with older versions)\n• WordPress development (custom templates/post types/modifying custom plugins)\n• WP Woocommerce/Payment Processing Platforms such as Paypal/Stripe\n• Experience building responsive, cross-browser compatible websites\n• Experience with WordPress backend/theme development\n• Experience with PHP dependency/packaging managers (Composer)\n• Experience with SASS and CSS/JS compiling tools (such as gulp.js or a GUI application of your choice)\n• Experience with version control (GIT, Subversion)\n• Must be familiar using Photoshop and/or Sketch to export assets from creative layouts\n• Experience with setting up custom tags in Google Tag Manager via javascript functions\n\nAdditional Skills\n• Custom WordPress plugin development is a plus\n• Experience with Cordova/PhoneGap/Ionic iPad App Development\n• Experience with Magento (editing template files/stylesheets, etc)\n• Experience building responsive, cross-browser compatible websites\n• Experience with CRM tools such as Hubspot, Pardot, Salesforce, etc.\n• Custom HTML email development\n\nAbout Plan B\nPlan B is a fast-paced creative agency with a diverse base of clients across industries, and we’re eager to bolster our digital capabilities with talented developers who thrive on a good challenge, and who are eager to contribute in an environment where ‘exceptional’ is the rule.\n\nInterested? Send your resume, freelance rate/range, relevant references, and any examples of your work to Developers@thisisplanb.com. If applicable, please indicate which development responsibilities were yours, how long it took, and what you charged for the work.\n\nAt Plan B, we are champions for global responsibility, inclusion and progress. We strive to be a force for good—for our people, our clients, our industry, society, and the world. We keep our people at the center, creating opportunities for their professional development, and building a dynamic culture of growth and possibility. We don’t just accept difference – we seek and celebrate it. We’re committed to embedding diversity in our company mindset, our services, and our teams to empower an equitable and culturally progressive environment that makes us all better collaborators –– both with each other and the clients we serve.\n\nPlan B doesn’t discriminate based on race, religion, color, national origin, gender (including pregnancy, childbirth, or related medical conditions), sexual orientation, gender identity, gender expression, age, status as a protected veteran, status as an individual with a disability, or other applicable legally protected characteristics.\n\nEmployment Location\nChicago, IL\n\nPay: $86,790.15 - $104,521.47 per year\n\nBenefits:\n• Dental insurance\n• Health insurance\n• Paid time off\n\nWork Location: In person",
+        "job_is_remote": false,
+        "job_posted_at": null,
+        "job_posted_at_timestamp": null,
+        "job_posted_at_datetime_utc": null,
+        "job_location": "Chicago, IL",
+        "job_city": "Chicago",
+        "job_state": "Illinois",
+        "job_country": "US",
+        "job_latitude": 41.88325,
+        "job_longitude": -87.6323879,
+        "job_benefits": [
+          "paid_time_off",
+          "dental_coverage",
+          "health_insurance"
+        ],
+        "job_google_link": "https://www.google.com/search?q=jobs&gl=us&hl=en&udm=8#vhid=vt%3D20/docid%3D4UJZtHUxZ-37NQ-PAAAAAA%3D%3D&vssid=jobs-detail-viewer",
+        "job_min_salary": 86790.15,
+        "job_max_salary": 104521.47,
+        "job_salary_period": "YEAR",
+        "job_highlights": {
+          "Qualifications": [
+            "Minimum of 5 years of hands-on web development experience",
+            "Ability to multi-task and comfortable juggling several projects at once",
+            "Outstanding attention to detail",
+            "Flexibility to adapt to design requirement changes",
+            "Proven ability to manage multiple, on-going timelines, as well as daily rush asks",
+            "A core understanding of industry best practices across digital channels",
+            "PHP/MySQL",
+            "Javascript",
+            "Custom API’s (CRM platforms, cloud-based media management)",
+            "MAMP/or local setup preference (must be able to set up local environments for all projects with multiple versions of PHP installed to work on sites with older versions)",
+            "WordPress development (custom templates/post types/modifying custom plugins)",
+            "WP Woocommerce/Payment Processing Platforms such as Paypal/Stripe",
+            "Experience building responsive, cross-browser compatible websites",
+            "Experience with WordPress backend/theme development",
+            "Experience with PHP dependency/packaging managers (Composer)",
+            "Experience with SASS and CSS/JS compiling tools (such as gulp.js or a GUI application of your choice)",
+            "Experience with version control (GIT, Subversion)",
+            "Must be familiar using Photoshop and/or Sketch to export assets from creative layouts",
+            "Experience with setting up custom tags in Google Tag Manager via javascript functions",
+            "Experience with Cordova/PhoneGap/Ionic iPad App Development",
+            "Experience with Magento (editing template files/stylesheets, etc)",
+            "Experience building responsive, cross-browser compatible websites",
+            "Experience with CRM tools such as Hubspot, Pardot, Salesforce, etc",
+            "Custom HTML email development"
+          ],
+          "Benefits": [
+            "Pay: $86,790.15 - $104,521.47 per year",
+            "Dental insurance",
+            "Health insurance",
+            "Paid time off"
+          ],
+          "Responsibilities": [
+            "As a Back-end Developer, you will be responsible for the server-side web application logic as well as for the integration of the front-end part to help us manage a growing variety of digital development needs—coding responsive and mobile-friendly emails, landing pages and full-fledged websites"
+          ]
+        },
+        "job_onet_soc": "15113400",
+        "job_onet_job_zone": "3"
+      },
+      {
+        "job_id": "aUxpjZGwAgf0g9DZAAAAAA==",
+        "job_title": "Developer - .Net/Angular, Loyalty IT",
+        "employer_name": "United Airlines",
+        "employer_logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6DMswunk7F25_BeXSf2w8JVHG65s4lc7v5wfG&s=0",
+        "employer_website": "https://www.united.com",
+        "job_publisher": "United Airlines Jobs",
+        "job_employment_type": "Full-time",
+        "job_employment_types": [
+          "FULLTIME"
+        ],
+        "job_apply_link": "https://careers.united.com/us/en/job/WHQ00025753/Developer-Net-Angular-Loyalty-IT?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "job_apply_is_direct": false,
+        "apply_options": [
+          {
+            "publisher": "United Airlines Jobs",
+            "apply_link": "https://careers.united.com/us/en/job/WHQ00025753/Developer-Net-Angular-Loyalty-IT?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "Dice",
+            "apply_link": "https://www.dice.com/job-detail/12f73b7a-201b-432a-93d8-3816e014b6c5?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "Glocomms",
+            "apply_link": "https://www.glocomms.com/en-us/job/cplusplus-software-developer-it-risk-cr564600_1760386762?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "Indeed",
+            "apply_link": "https://www.indeed.com/viewjob?jk=f51a1e5b07f97a41&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "ZipRecruiter",
+            "apply_link": "https://www.ziprecruiter.com/c/United-Airlines,-Inc./Job/Developer-.Net-Angular,-Loyalty-IT/-in-Chicago,IL?jid=bc93d0d4ff2b33b6&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "Glassdoor",
+            "apply_link": "https://www.glassdoor.com/job-listing/developer-net-angular-loyalty-it-united-airlines-JV_IC1128808_KO0,32_KE33,48.htm?jl=1009930404316&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "LinkedIn",
+            "apply_link": "https://www.linkedin.com/jobs/view/developer-net-angular-loyalty-it-at-united-airlines-4334600338?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          },
+          {
+            "publisher": "SimplyHired",
+            "apply_link": "https://www.simplyhired.com/job/Wdn8dRyUdJ_dkvL5R_xEgTKdaNC_vgTxPd-xcSvvjY51Lga0trN-0w?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+            "is_direct": false
+          }
+        ],
+        "job_description": "Achieving our goals starts with supporting yours. Grow your career, access top-tier health and wellness benefits, build lasting connections with your team and our customers, and travel the world using our extensive route network.\n\nCome join us to create what’s next. Let’s define tomorrow, together.\n\nDescription\n\nThe Loyalty IT Developer role will be a contributor for the development of Loyalty critical applications. This role will need to have full stack expertise on technical development in Loyalty technologies including front end customer applications, API development and integration, database & AWS cloud-based services.\n• Contribute to development, execution, and delivery of artifacts/code for Loyalty applications\n• Collaborate with technology leads/developers, business SMEs, UX designers, and technology stakeholders to define technical deliveries as required\n• Integrate Loyalty services and UIs with back-end systems, APIs and analytics platforms\n• Participate in Agile/Scrum methodologies, participate in sprint planning, stand-ups, and retrospectives\n• Participate in integrations between internal platforms, external systems, and cloud services\n• Collaborate with development, infrastructure, and product teams to gather integration requirements and translate them into scalable technical solutions\n• Coordinate unit and integration testing and assist QA teams with end-to-end testing\n• Stay current with industry best practices and emerging technologies in development and integration\n• Escalate and document risks, issues, blockers and dependencies; discuss with team project manager on regular basis\n• Leverage Cloud infrastructure teams to ensure scalable, secure, and high-performance deployments\n• Maintain vendor relationships and third-party integrations when applicable\n• Support and guide the team in removing blockers, maintaining momentum, and ensuring quality\n• Experience delivering full stack applications.\n• Technical understanding of cloud platforms (AWS/Azure/GCP), APIs, CI/CD, web technologies, and DevOps practices\n• Experience with Agile/Scrum or SAFe frameworks and tools (e.g., Jira, Confluence, Azure DevOps)\n• Good communication, leadership, and documentation abilities\n• Knowledge of APIs, JSON, XML, and OAuth\n• Experience with language: Angular, .NET, Python\n• Familiarity with CI/CD pipelines/DevOps and version control tools like Git\n• Familiarity with compliance standards (e.g., Accessibility, GDPR, PCI-DSS) in cloud solutions\nQualifications\n\nWhat’s needed to succeed (Minimum Qualifications):\n\n· Bachelor's degree in Computer science, software engineering, or related field\n\n· 3+ years of related experience or successful completion of United DT Early Career Digital Leadership Program (ECDLP)\n\n· Proficient in a coding language and building back-end components\n\n· Problem solving\n\n· Attention to detail\n\n· Effective Communication (verbal + written)\n\n· Demonstrates and eagerness to learn\n\n· Demonstrate advanced knowledge of SDLC processes, inputs/outputs, standards and best practices\n\n· Demonstrate advance knowledge of development methodologies, software design and design patterns\n\n· Demonstrate advance knowledge of the application of development domain areas and specific technologies and tool set\n\n· Must be legally authorized to work in the United States for any employer without sponsorship\n\n· Successful completion of interview required to meet job qualification\n\n· Reliable, punctual attendance is an essential function of the position\n\nWhat will help you propel from the pack (Preferred Qualifications):\n\n· Knowledge of AWS ECS, S3, Lambdas and PostGres databases\n\n· Knowledge of Kong, Copilot, and UI Accessibility.\n\n· Cloud certification\n\n· SaFe Agile Certification\n\n· Exposure to Dynatrace\n\n· Agile Methodologies\n\n· SQL, Oracle Experience, Relational DB Experience\n\n· Code Repositories like Github\n\n· Microsoft Office tools, PowerPoint, Excel\n\n· Dev Ops Experience\n\n· UI Analytics (Google Analytics)\n\n· Continuous Integration & Continuous Deployment\n\nThe base pay range for this role is $87,780.00 to $114,376.00.\nThe base salary range/hourly rate listed is dependent on job-related, factors such as experience, education, and skills. This position is also eligible for bonus and/or long-term incentive compensation awards.\n\nYou may be eligible for the following competitive benefits: medical, dental, vision, life, accident & disability, parental leave, employee assistance program, commuter, paid holidays, paid time off, 401(k) and flight privileges.\n\nUnited Airlines is an equal opportunity employer. United Airlines recruits, employs, trains, compensates and promotes regardless of race, religion, color, national origin, gender identity, sexual orientation, physical ability, age, veteran status and other protected status as required by applicable law. Equal Opportunity Employer - Minorities/Women/Veterans/Disabled/LGBT.\n\nWe will ensure that individuals with disabilities are provided reasonable accommodation to participate in the job application or interview process, to perform crucial job functions. Please contact JobAccommodations@united.com to request accommodation.",
+        "job_is_remote": false,
+        "job_posted_at": "23 hours ago",
+        "job_posted_at_timestamp": 1764543600,
+        "job_posted_at_datetime_utc": "2025-11-30T23:00:00.000Z",
+        "job_location": "Chicago, IL",
+        "job_city": "Chicago",
+        "job_state": "Illinois",
+        "job_country": "US",
+        "job_latitude": 41.88325,
+        "job_longitude": -87.6323879,
+        "job_benefits": [
+          "paid_time_off",
+          "health_insurance",
+          "dental_coverage"
+        ],
+        "job_google_link": "https://www.google.com/search?q=jobs&gl=us&hl=en&udm=8#vhid=vt%3D20/docid%3DaUxpjZGwAgf0g9DZAAAAAA%3D%3D&vssid=jobs-detail-viewer",
+        "job_salary": null,
+        "job_min_salary": null,
+        "job_max_salary": null,
+        "job_salary_period": null,
+        "job_highlights": {
+          "Qualifications": [
+            "Technical understanding of cloud platforms (AWS/Azure/GCP), APIs, CI/CD, web technologies, and DevOps practices",
+            "Experience with Agile/Scrum or SAFe frameworks and tools (e.g., Jira, Confluence, Azure DevOps)",
+            "Good communication, leadership, and documentation abilities",
+            "Knowledge of APIs, JSON, XML, and OAuth",
+            "Experience with language: Angular, .NET, Python",
+            "Familiarity with CI/CD pipelines/DevOps and version control tools like Git",
+            "Familiarity with compliance standards (e.g., Accessibility, GDPR, PCI-DSS) in cloud solutions",
+            "Bachelor's degree in Computer science, software engineering, or related field",
+            "3+ years of related experience or successful completion of United DT Early Career Digital Leadership Program (ECDLP)",
+            "Proficient in a coding language and building back-end components",
+            "Problem solving",
+            "Attention to detail",
+            "Effective Communication (verbal + written)",
+            "Demonstrates and eagerness to learn",
+            "Demonstrate advanced knowledge of SDLC processes, inputs/outputs, standards and best practices",
+            "Demonstrate advance knowledge of development methodologies, software design and design patterns",
+            "Demonstrate advance knowledge of the application of development domain areas and specific technologies and tool set",
+            "Must be legally authorized to work in the United States for any employer without sponsorship",
+            "Successful completion of interview required to meet job qualification",
+            "Reliable, punctual attendance is an essential function of the position"
+          ],
+          "Benefits": [
+            "The base pay range for this role is $87,780.00 to $114,376.00",
+            "The base salary range/hourly rate listed is dependent on job-related, factors such as experience, education, and skills",
+            "This position is also eligible for bonus and/or long-term incentive compensation awards",
+            "You may be eligible for the following competitive benefits: medical, dental, vision, life, accident & disability, parental leave, employee assistance program, commuter, paid holidays, paid time off, 401(k) and flight privileges"
+          ],
+          "Responsibilities": [
+            "The Loyalty IT Developer role will be a contributor for the development of Loyalty critical applications",
+            "This role will need to have full stack expertise on technical development in Loyalty technologies including front end customer applications, API development and integration, database & AWS cloud-based services",
+            "Contribute to development, execution, and delivery of artifacts/code for Loyalty applications",
+            "Collaborate with technology leads/developers, business SMEs, UX designers, and technology stakeholders to define technical deliveries as required",
+            "Integrate Loyalty services and UIs with back-end systems, APIs and analytics platforms",
+            "Participate in Agile/Scrum methodologies, participate in sprint planning, stand-ups, and retrospectives",
+            "Participate in integrations between internal platforms, external systems, and cloud services",
+            "Collaborate with development, infrastructure, and product teams to gather integration requirements and translate them into scalable technical solutions",
+            "Coordinate unit and integration testing and assist QA teams with end-to-end testing",
+            "Stay current with industry best practices and emerging technologies in development and integration",
+            "Escalate and document risks, issues, blockers and dependencies; discuss with team project manager on regular basis",
+            "Leverage Cloud infrastructure teams to ensure scalable, secure, and high-performance deployments",
+            "Maintain vendor relationships and third-party integrations when applicable",
+            "Support and guide the team in removing blockers, maintaining momentum, and ensuring quality",
+            "Experience delivering full stack applications"
+          ]
+        },
+        "job_onet_soc": "15113200",
+        "job_onet_job_zone": "4"
+      }
+    ]
+  }

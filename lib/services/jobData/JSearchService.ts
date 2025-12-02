@@ -178,6 +178,7 @@ export class JSearchService {
       postedDate: jsearchJob.job_posted_at_datetime_utc
         ? new Date(jsearchJob.job_posted_at_datetime_utc)
         : undefined,
+      applyLink: jsearchJob.job_apply_link,
     };
   }
 

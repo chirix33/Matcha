@@ -13,6 +13,7 @@ export interface Job {
   location?: string;
   salaryRange?: string;
   postedDate?: Date;
+  applyLink?: string;
 }
 
 export interface CompanyInsight {
