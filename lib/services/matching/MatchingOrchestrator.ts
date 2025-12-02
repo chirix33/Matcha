@@ -1,10 +1,13 @@
 import { SemanticMatchingStrategy } from "./SemanticMatchingStrategy";
 import { KeywordMatchingStrategy } from "./KeywordMatchingStrategy";
 import { HuggingFaceService } from "@/lib/services/ai/HuggingFaceService";
+import { companyInsightsCache } from "@/lib/services/cache/CompanyInsightsCache";
+import { performanceMonitor } from "@/lib/services/PerformanceMonitor";
 import type { Job, MatchResult, CompanyInsight } from "@/types/job";
 import type { AnonymizedProfile } from "@/types/profile";
 
 const SEMANTIC_MATCHING_TIMEOUT_MS = 5000; // 5 seconds
+const MAX_MATCHES_TO_PROCESS = 10; // Limit to top 10 matches for performance
 
 export class MatchingOrchestrator {
   private semanticStrategy: SemanticMatchingStrategy;
@@ -19,54 +22,87 @@ export class MatchingOrchestrator {
 
   /**
    * Find job matches for a profile using strategy pattern with fallback
+   * Optimized to limit processing to top matches early for performance
    */
   async findMatches(profile: AnonymizedProfile, jobs: Job[]): Promise<MatchResult[]> {
-    // Try semantic matching first with timeout
-    try {
-      const matches = await Promise.race([
-        this.semanticStrategy.findMatches(profile, jobs),
-        this.timeoutPromise(SEMANTIC_MATCHING_TIMEOUT_MS),
-      ]);
+    return performanceMonitor.measureAsync("matching.findMatches", async () => {
+      // Limit jobs to process for performance (we only need top 10)
+      // Process slightly more than needed to account for filtering, but not all jobs
+      const jobsToProcess = jobs.slice(0, Math.min(jobs.length, MAX_MATCHES_TO_PROCESS * 2));
 
-      console.log(`[MatchingOrchestrator] Semantic matching succeeded (${matches.length} matches)`);
-      return matches;
-    } catch (error) {
-      // Fallback to keyword matching
-      console.warn("[MatchingOrchestrator] Semantic matching failed, falling back to keyword matching:", error);
-      const matches = await this.keywordStrategy.findMatches(profile, jobs);
-      console.log(`[MatchingOrchestrator] Keyword matching completed (${matches.length} matches)`);
-      return matches;
-    }
+      // Try semantic matching first with timeout
+      try {
+        const matches = await Promise.race([
+          this.semanticStrategy.findMatches(profile, jobsToProcess),
+          this.timeoutPromise(SEMANTIC_MATCHING_TIMEOUT_MS),
+        ]);
+
+        // Sort by score and limit to top 10
+        const topMatches = matches
+          .sort((a, b) => b.score - a.score)
+          .slice(0, MAX_MATCHES_TO_PROCESS);
+
+        console.log(`[MatchingOrchestrator] Semantic matching succeeded (${topMatches.length} matches)`);
+        return topMatches;
+      } catch (error) {
+        // Fallback to keyword matching
+        console.warn("[MatchingOrchestrator] Semantic matching failed, falling back to keyword matching:", error);
+        const matches = await this.keywordStrategy.findMatches(profile, jobsToProcess);
+        
+        // Sort by score and limit to top 10
+        const topMatches = matches
+          .sort((a, b) => b.score - a.score)
+          .slice(0, MAX_MATCHES_TO_PROCESS);
+
+        console.log(`[MatchingOrchestrator] Keyword matching completed (${topMatches.length} matches)`);
+        return topMatches;
+      }
+    });
   }
 
   /**
    * Generate company insight cards for jobs
+   * Uses caching to avoid redundant AI calls and improve performance
    */
   async generateCompanyInsights(jobs: Job[]): Promise<Map<string, CompanyInsight>> {
-    const insights = new Map<string, CompanyInsight>();
+    return performanceMonitor.measureAsync("matching.generateCompanyInsights", async () => {
+      const insights = new Map<string, CompanyInsight>();
 
-    // Generate insights in parallel with timeout protection
-    const insightPromises = jobs.map(async (job) => {
-      try {
-        const insight = await Promise.race([
-          this.hfService.summarizeCompany(job.description, `${job.company} - ${job.industry}`),
-          this.timeoutPromise(5000), // 5 second timeout
-        ]);
+      // Generate insights in parallel with timeout protection and caching
+      const insightPromises = jobs.map(async (job) => {
+        // Check cache first
+        const cachedInsight = companyInsightsCache.get(job.id, job.description);
+        if (cachedInsight) {
+          insights.set(job.id, cachedInsight);
+          return;
+        }
 
-        // Enhance insight with job data
-        insight.companySize = job.companySize;
-        insight.industries = [job.industry];
+        try {
+          const insight = await Promise.race([
+            this.hfService.summarizeCompany(job.description, `${job.company} - ${job.industry}`),
+            this.timeoutPromise(5000), // 5 second timeout
+          ]);
 
-        insights.set(job.id, insight);
-      } catch (error) {
-        // Fallback: Create simple insight from job data
-        console.warn(`[MatchingOrchestrator] Failed to generate insight for job ${job.id}, using fallback:`, error);
-        insights.set(job.id, this.createFallbackInsight(job));
-      }
+          // Enhance insight with job data
+          insight.companySize = job.companySize;
+          insight.industries = [job.industry];
+
+          // Cache the insight for future use
+          companyInsightsCache.set(job.id, job.description, insight);
+          insights.set(job.id, insight);
+        } catch (error) {
+          // Fallback: Create simple insight from job data
+          console.warn(`[MatchingOrchestrator] Failed to generate insight for job ${job.id}, using fallback:`, error);
+          const fallbackInsight = this.createFallbackInsight(job);
+          // Cache fallback insight too (shorter TTL could be considered, but 7 days is fine)
+          companyInsightsCache.set(job.id, job.description, fallbackInsight);
+          insights.set(job.id, fallbackInsight);
+        }
+      });
+
+      await Promise.all(insightPromises);
+      return insights;
     });
-
-    await Promise.all(insightPromises);
-    return insights;
   }
 
   /**

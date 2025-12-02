@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { OpenAIService } from "@/lib/services/ai/OpenAIService";
 import { AIError } from "@/lib/services/ai/AIService";
 import { auditLogger } from "@/lib/services/AuditLogger";
+import { requestDeduplicationCache } from "@/lib/services/cache/RequestDeduplicationCache";
+import { performanceMonitor } from "@/lib/services/PerformanceMonitor";
 import { prepareTranscriptForOpenAI } from "@/lib/utils/privacyUtils";
 
 // Simple parsing fallback function
@@ -38,11 +40,22 @@ export async function POST(request: NextRequest) {
       console.warn("[ExtractSkills] Transcript sanitized - PII patterns removed:", warnings);
     }
 
-    // Try OpenAI API first
+    // Try OpenAI API first with request deduplication and performance monitoring
     try {
       const openAIService = new OpenAIService();
       // Privacy: Only sanitized transcript text is sent to OpenAI (no PII)
-      const skills = await openAIService.extractSkills(sanitizedTranscript);
+      // Use request deduplication to avoid redundant expensive OpenAI calls
+      const skills = await performanceMonitor.measureAsync(
+        "api.extract-skills.openai",
+        () => requestDeduplicationCache.getOrExecute(
+          {
+            type: "extractSkills",
+            transcript: sanitizedTranscript,
+          },
+          () => openAIService.extractSkills(sanitizedTranscript),
+          3600000 // Cache for 1 hour
+        )
+      );
 
       // Audit log: Success (privacy boundary crossing logged after successful call)
       auditLogger.logOpenAICall("extractSkills", sanitizedTranscript.length, true);

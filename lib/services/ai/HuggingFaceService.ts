@@ -197,13 +197,27 @@ export class HuggingFaceService extends AIService {
   /**
    * Summarize company information from job description
    */
-  async summarizeCompany(jobDescription: string, companyInfo?: string): Promise<CompanyInsight> {
-    return this.withRetry(async () => {
-      return this.withTimeout(
-        this.performSummarization(jobDescription, companyInfo),
-        SUMMARIZATION_TIMEOUT_MS
-      );
-    });
+  async summarizeCompany(
+    jobDescription: string,
+    companyInfo?: string
+  ): Promise<CompanyInsight> {
+    // Use request deduplication to avoid redundant AI calls
+    const { requestDeduplicationCache } = await import("@/lib/services/cache/RequestDeduplicationCache");
+    
+    return requestDeduplicationCache.getOrExecute(
+      {
+        type: "summarizeCompany",
+        jobDescription,
+        companyInfo,
+      },
+      () => this.withRetry(async () => {
+        return this.withTimeout(
+          this.performSummarization(jobDescription, companyInfo),
+          SUMMARIZATION_TIMEOUT_MS
+        );
+      }),
+      7 * 24 * 60 * 60 * 1000 // 7 days TTL (same as company insights cache)
+    );
   }
 
   private async performSummarization(

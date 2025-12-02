@@ -7,6 +7,8 @@ Matcha is an AI-assisted job matching assistant for students and early-career pr
 - **Multi-Step Profile Creation**: Guided form with 5 steps to capture user information
 - **Speech-to-Text Integration**: Voice input using Hugging Face Whisper AI for skills and achievements
 - **AI-Powered Skills Extraction**: OpenAI API extracts and normalizes skills from transcripts with automatic fallback
+- **Real Job Listings**: Integration with JSearch API to fetch real job postings from multiple job boards (LinkedIn, Indeed, etc.)
+- **Intelligent Job Matching**: AI-powered semantic matching with keyword fallback to find jobs that fit your profile
 - **Privacy-First Design**: Audio is processed and immediately discarded; PII is separated from matching data
 - **Responsive UI**: Modern, accessible interface built with Next.js, TypeScript, and Tailwind CSS
 
@@ -18,6 +20,8 @@ Matcha is an AI-assisted job matching assistant for students and early-career pr
 - **AI Services**: 
   - Hugging Face Inference API (Whisper model for speech-to-text)
   - OpenAI API (for structured skills extraction)
+- **Job Data**: 
+  - JSearch API via RapidAPI (aggregates job listings from LinkedIn, Indeed, and other job boards)
 - **State Management**: React Hooks with localStorage persistence
 
 ## Getting Started
@@ -27,6 +31,7 @@ Matcha is an AI-assisted job matching assistant for students and early-career pr
 - Node.js 18+ and npm/yarn
 - Hugging Face account with API key ([Get one here](https://huggingface.co/settings/tokens))
 - OpenAI account with API key ([Get one here](https://platform.openai.com/api-keys))
+- RapidAPI account with JSearch API key ([Get one here](https://rapidapi.com/letscrape-6bRBa3QguO5/api/jsearch)) - Free tier: 200 requests/month
 - Neon PostgreSQL database ([Get one here](https://neon.tech)) - Free tier available
 
 ### Installation
@@ -51,12 +56,14 @@ cp .env.example .env.local
 ```
 HUGGING_FACE_API_KEY=your_hugging_face_api_key_here
 OPENAI_API_KEY=your_openai_api_key_here
+RAPIDAPI_KEY=your_rapidapi_key_here
 DATABASE_URL=postgresql://user:password@host/database?sslmode=require
 ```
 
 **Important**: 
 - These API keys should be server-side only (without `NEXT_PUBLIC_` prefix) for security.
 - Get your `DATABASE_URL` from your Neon project dashboard after creating a project.
+- Get your `RAPIDAPI_KEY` from RapidAPI after subscribing to the JSearch API (free tier available: 200 requests/month).
 
 ### Running the Development Server
 
